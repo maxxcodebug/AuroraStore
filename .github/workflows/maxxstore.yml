@@ -19,137 +19,102 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ----------------------------------------------------------
-      # Checkout
-      # ----------------------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ----------------------------------------------------------
-      # JDK 21
-      # ----------------------------------------------------------
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
 
-      # ----------------------------------------------------------
-      # Android SDK environment only
-      # Do NOT pass packages to setup-android.
-      # ----------------------------------------------------------
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # Ubuntu GitHub runners already contain Android SDK.
+      # Do NOT use android-actions/setup-android here because
+      # it attempts to install the obsolete "tools" package.
 
-      # ----------------------------------------------------------
-      # Install Android SDK components
-      # ----------------------------------------------------------
-      - name: Install Android SDK components
+      - name: Configure Android SDK
         shell: bash
         run: |
           set -e
 
-          SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          export ANDROID_HOME="/usr/local/lib/android/sdk"
+          export ANDROID_SDK_ROOT="$ANDROID_HOME"
 
-          echo "SDK_ROOT=$SDK_ROOT"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> "$GITHUB_ENV"
 
-          if [ -z "$SDK_ROOT" ]; then
-            echo "::error::ANDROID_SDK_ROOT / ANDROID_HOME is not set."
-            exit 1
-          fi
-
-          export ANDROID_SDK_ROOT="$SDK_ROOT"
-          export ANDROID_HOME="$SDK_ROOT"
-
-          SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
 
           if [ ! -x "$SDKMANAGER" ]; then
-            SDKMANAGER="$(command -v sdkmanager || true)"
-          fi
-
-          if [ -z "$SDKMANAGER" ]; then
-            echo "::error::sdkmanager was not found."
+            echo "::error::sdkmanager not found at $SDKMANAGER"
+            find "$ANDROID_HOME/cmdline-tools" -maxdepth 3 -type f -name sdkmanager -print || true
             exit 1
           fi
 
-          echo "Using sdkmanager:"
+          echo "Using:"
           "$SDKMANAGER" --version
 
-          echo
-          echo "Accepting licenses..."
-          yes | "$SDKMANAGER" --sdk_root="$SDK_ROOT" --licenses > /dev/null || true
+      - name: Accept Android SDK licenses
+        shell: bash
+        run: |
+          set -e
 
-          echo
-          echo "Updating SDK package metadata..."
-          "$SDKMANAGER" --sdk_root="$SDK_ROOT" --update || true
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
 
-          echo
-          echo "Installing required packages..."
+          yes | "$SDKMANAGER" \
+            --sdk_root="$ANDROID_HOME" \
+            --licenses > /dev/null || true
+
+      - name: Install Android SDK packages
+        shell: bash
+        run: |
+          set -e
+
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
+
+          echo "Installing Android SDK packages..."
 
           "$SDKMANAGER" \
-            --sdk_root="$SDK_ROOT" \
+            --sdk_root="$ANDROID_HOME" \
             "platform-tools" \
             "platforms;android-37" \
             "build-tools;35.0.0"
 
-      # ----------------------------------------------------------
-      # Verify SDK
-      # ----------------------------------------------------------
       - name: Verify Android SDK
         shell: bash
         run: |
-          SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          set -e
 
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
-
-          echo
-          echo "Installed platforms:"
-          find "$SDK_ROOT/platforms" \
-            -maxdepth 1 \
-            -mindepth 1 \
-            -type d \
-            -print || true
+          echo "Android SDK:"
+          echo "$ANDROID_HOME"
 
           echo
-          echo "Installed build tools:"
-          find "$SDK_ROOT/build-tools" \
-            -maxdepth 1 \
-            -mindepth 1 \
-            -type d \
-            -print || true
+          echo "Platforms:"
+          ls -la "$ANDROID_HOME/platforms"
+
+          echo
+          echo "Build tools:"
+          ls -la "$ANDROID_HOME/build-tools"
 
           echo
           echo "ADB:"
-          "$SDK_ROOT/platform-tools/adb" version
+          "$ANDROID_HOME/platform-tools/adb" version
 
-      # ----------------------------------------------------------
-      # Gradle
-      # ----------------------------------------------------------
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      # ----------------------------------------------------------
-      # Prepare Gradle
-      # ----------------------------------------------------------
       - name: Prepare Gradle
         run: |
           chmod +x ./gradlew
 
-      # ----------------------------------------------------------
-      # Build Maxx Store
-      # ----------------------------------------------------------
       - name: Build Maxx Store
         run: |
           ./gradlew :app:assembleVanillaDebug \
             --stacktrace \
             --no-daemon
 
-      # ----------------------------------------------------------
-      # Prepare APK
-      # ----------------------------------------------------------
       - name: Prepare APK
         shell: bash
         run: |
@@ -183,9 +148,6 @@ jobs:
           echo "Final APK:"
           ls -lh release/MaxxStore-debug.apk
 
-      # ----------------------------------------------------------
-      # Release tag
-      # ----------------------------------------------------------
       - name: Generate release tag
         id: release
         run: |
@@ -193,9 +155,6 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "Release tag: $TAG"
 
-      # ----------------------------------------------------------
-      # GitHub Pre-release
-      # ----------------------------------------------------------
       - name: Publish Pre-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -208,9 +167,6 @@ jobs:
             --title "Maxx Store ${{ steps.release.outputs.tag }}" \
             --generate-notes
 
-      # ----------------------------------------------------------
-      # Summary
-      # ----------------------------------------------------------
       - name: Build Summary
         run: |
           {
