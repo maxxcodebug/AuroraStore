@@ -101,28 +101,39 @@ private fun MaxxHomeHeader(
     onSearch: () -> Unit
 ) {
     Surface(
-        color = androidx.compose.material3.MaterialTheme.colorScheme.background.copy(alpha = 0.94f),
+        color = androidx.compose.material3.MaterialTheme.colorScheme.background,
         tonalElevation = 0.dp,
         shadowElevation = 0.dp
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 8.dp, top = 10.dp, bottom = 8.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    start = 20.dp,
+                    end = 8.dp,
+                    top = 16.dp,
+                    bottom = 12.dp
+                ),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
+            Column(
+                Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
                 Text(
                     text = "Maxx Store",
-                    style = androidx.compose.material3.MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold
+                    style = androidx.compose.material3.MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = androidx.compose.material3.MaterialTheme.colorScheme.onBackground
                 )
                 Text(
                     text = maxxGreeting(),
-                    style = androidx.compose.material3.MaterialTheme.typography.bodyMedium,
-                    color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                    style = androidx.compose.material3.MaterialTheme.typography.bodyLarge,
+                    color = androidx.compose.material3.MaterialTheme.colorScheme.onBackground.copy(alpha = 0.68f)
                 )
             }
             HeaderIconButton(R.drawable.ic_round_search, "Search", onSearch)
-            HeaderIconButton(R.drawable.ic_settings_account, "Menu", onMenu)
+            HeaderIconButton(R.drawable.ic_settings_account, "Account", onMenu)
         }
     }
 }

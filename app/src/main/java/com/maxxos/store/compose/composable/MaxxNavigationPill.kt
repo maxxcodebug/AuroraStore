@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -47,78 +48,99 @@ fun MaxxNavigationPill(
     onSelected: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val dark = isSystemInDarkTheme()
+
     val tabs = listOf(
         com.maxxos.store.R.string.title_apps to com.maxxos.store.R.drawable.ic_apps,
         com.maxxos.store.R.string.title_games to com.maxxos.store.R.drawable.ic_games,
         com.maxxos.store.R.string.title_updates to com.maxxos.store.R.drawable.ic_updates
     )
 
+    val outerColor =
+        if (dark) Color(0xFF171817)
+        else Color(0xFFF8FAF7)
+
+    val selectedColor =
+        if (dark) Color(0xFFF5F7F4)
+        else Color(0xFF183F38)
+
+    val selectedContent =
+        if (dark) Color(0xFF101210)
+        else Color.White
+
+    val inactiveContent =
+        if (dark) Color(0xFFE4E8E3)
+        else Color(0xFF36504A)
+
     Surface(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
-            .shadow(10.dp, RoundedCornerShape(32.dp)),
-        shape = RoundedCornerShape(32.dp),
-        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.94f),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.32f))
+            .shadow(12.dp, RoundedCornerShape(34.dp)),
+        shape = RoundedCornerShape(34.dp),
+        color = outerColor.copy(alpha = 0.97f),
+        border = BorderStroke(
+            1.dp,
+            if (dark) Color.White.copy(alpha = 0.10f)
+            else Color(0xFF183F38).copy(alpha = 0.10f)
+        )
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
             tabs.forEachIndexed { index, (labelRes, iconRes) ->
                 val selected = selectedIndex == index
+
                 Surface(
                     onClick = { onSelected(index) },
                     modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(26.dp),
-                    color = if (selected) MaterialTheme.colorScheme.primary else Color.Transparent,
-                    contentColor = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onPrimaryContainer
+                    shape = RoundedCornerShape(28.dp),
+                    color = if (selected) selectedColor else Color.Transparent,
+                    contentColor = if (selected) selectedContent else inactiveContent
                 ) {
-                    Box(
-                        modifier = Modifier.padding(horizontal = 5.dp, vertical = 9.dp),
-                        contentAlignment = Alignment.Center
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                horizontal = 10.dp,
+                                vertical = 11.dp
+                            ),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        val iconContent: @Composable () -> Unit = {
+                        if (index == 2 && updateCount > 0) {
+                            BadgedBox(
+                                badge = {
+                                    Badge {
+                                        Text(updateCount.coerceAtMost(99).toString())
+                                    }
+                                }
+                            ) {
+                                Icon(
+                                    painter = painterResource(iconRes),
+                                    contentDescription = stringResource(labelRes),
+                                    modifier = Modifier.size(21.dp)
+                                )
+                            }
+                        } else {
                             Icon(
                                 painter = painterResource(iconRes),
                                 contentDescription = stringResource(labelRes),
                                 modifier = Modifier.size(21.dp)
                             )
                         }
-                        if (index == 2 && updateCount > 0) {
-                            BadgedBox(badge = { Badge { Text(updateCount.toString()) } }) {
-                                if (selected) {
-                                    Row(
-                                        horizontalArrangement = Arrangement.spacedBy(7.dp),
-                                        verticalAlignment = Alignment.CenterVertically
-                                    ) {
-                                        iconContent()
-                                        Text(
-                                            text = stringResource(labelRes),
-                                            style = MaterialTheme.typography.labelLarge,
-                                            fontWeight = FontWeight.SemiBold
-                                        )
-                                    }
-                                } else {
-                                    iconContent()
-                                }
-                            }
-                        } else if (selected) {
-                            Row(
-                                horizontalArrangement = Arrangement.spacedBy(7.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                iconContent()
-                                Text(
-                                    text = stringResource(labelRes),
-                                    style = MaterialTheme.typography.labelLarge,
-                                    fontWeight = FontWeight.SemiBold
-                                )
-                            }
-                        } else {
-                            iconContent()
+
+                        if (selected) {
+                            Text(
+                                text = stringResource(labelRes),
+                                modifier = Modifier.padding(start = 7.dp),
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.SemiBold
+                            )
                         }
                     }
                 }
@@ -126,3 +148,4 @@ fun MaxxNavigationPill(
         }
     }
 }
+

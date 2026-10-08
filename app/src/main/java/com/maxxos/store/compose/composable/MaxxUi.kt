@@ -15,6 +15,7 @@
 package com.maxxos.store.compose.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -70,34 +71,53 @@ fun maxxGreeting(name: String = "Anshuman"): String {
 
 @Composable
 fun MaxxBackground(content: @Composable () -> Unit) {
+    val dark = isSystemInDarkTheme()
+
+    val background =
+        if (dark) Color(0xFF101110)
+        else Color(0xFFF5F8F4)
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(background)
     ) {
         Box(
             Modifier
-                .size(170.dp)
+                .size(190.dp)
                 .align(Alignment.TopEnd)
-                .padding(20.dp)
+                .offset(x = 28.dp, y = (-24).dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.30f))
+                .background(
+                    if (dark) Color(0xFF34564D).copy(alpha = 0.22f)
+                    else Color(0xFFB9DED2).copy(alpha = 0.45f)
+                )
         )
+
         Box(
             Modifier
-                .size(110.dp)
+                .size(125.dp)
                 .align(Alignment.CenterStart)
+                .offset(x = (-48).dp, y = 90.dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.22f))
+                .background(
+                    if (dark) Color(0xFF46655C).copy(alpha = 0.15f)
+                    else Color(0xFFC9E7DD).copy(alpha = 0.48f)
+                )
         )
+
         Box(
             Modifier
-                .size(72.dp)
+                .size(75.dp)
                 .align(Alignment.BottomEnd)
-                .padding(8.dp)
+                .offset(x = 22.dp, y = (-80).dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.25f))
+                .background(
+                    if (dark) Color(0xFF5B746C).copy(alpha = 0.12f)
+                    else Color(0xFFD9EEE7).copy(alpha = 0.55f)
+                )
         )
+
         content()
     }
 }
@@ -123,19 +143,33 @@ fun MaxxPill(
     selected: Boolean = false,
     onClick: (() -> Unit)? = null
 ) {
+    val dark = isSystemInDarkTheme()
+
     Surface(
         onClick = onClick ?: {},
         enabled = onClick != null,
         shape = RoundedCornerShape(50),
-        color = if (selected) MaterialTheme.colorScheme.primary
-        else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.72f),
-        contentColor = if (selected) MaterialTheme.colorScheme.onPrimary
-        else MaterialTheme.colorScheme.onSurfaceVariant
+        color = when {
+            selected && dark -> Color(0xFFF4F6F2)
+            selected -> Color(0xFF183F38)
+            dark -> Color(0xFF2C2E2C)
+            else -> Color(0xFFE1E7E3)
+        },
+        contentColor = when {
+            selected && dark -> Color(0xFF101210)
+            selected -> Color.White
+            dark -> Color(0xFFE8ECE8)
+            else -> Color(0xFF30453F)
+        }
     ) {
         Text(
             text = text,
-            modifier = Modifier.padding(horizontal = 15.dp, vertical = 9.dp),
-            style = MaterialTheme.typography.labelLarge
+            modifier = Modifier.padding(
+                horizontal = 18.dp,
+                vertical = 10.dp
+            ),
+            style = MaterialTheme.typography.labelLarge,
+            fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium
         )
     }
 }
