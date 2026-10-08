@@ -2,7 +2,7 @@
 #
 # Builds Maxx Store and publishes the APK as a GitHub Pre-release.
 
-name: Build Maxx Store
+name: Build Maxx Store APK
 
 on:
   workflow_dispatch:
@@ -20,62 +20,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ----------------------------------------------------------
-      # Checkout
-      # ----------------------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ----------------------------------------------------------
-      # Java 21
-      # ----------------------------------------------------------
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
 
-      # ----------------------------------------------------------
-      # Android SDK
-      # ----------------------------------------------------------
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: |
+            platform-tools
+            platforms;android-37
+            build-tools;35.0.0
 
-      # ----------------------------------------------------------
-      # Android SDK packages
-      # ----------------------------------------------------------
-      - name: Install Android SDK
+      - name: Accept Android SDK licenses
         run: |
           yes | sdkmanager --licenses > /dev/null || true
 
-          sdkmanager \
-            "platform-tools" \
-            "platforms;android-37" \
-            "build-tools;35.0.0"
+      - name: Verify Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          sdkmanager --list_installed || true
+          ls -la "$ANDROID_HOME/platforms" || true
+          ls -la "$ANDROID_HOME/build-tools" || true
 
-      # ----------------------------------------------------------
-      # Gradle
-      # ----------------------------------------------------------
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      # ----------------------------------------------------------
-      # Build Maxx Store
-      # vanillaDebug
-      # ----------------------------------------------------------
+      - name: Prepare Gradle
+        run: chmod +x ./gradlew
+
       - name: Build Maxx Store
         run: |
-          chmod +x ./gradlew
-
           ./gradlew :app:assembleVanillaDebug \
             --stacktrace \
             --no-daemon
 
-      # ----------------------------------------------------------
-      # Find and rename APK
-      # ----------------------------------------------------------
       - name: Prepare APK
         shell: bash
         run: |
@@ -85,44 +72,34 @@ jobs:
 
           echo "Searching for APK..."
 
-          find app/build/outputs/apk \
+          find . \
             -type f \
-            -name "*.apk" \
+            -path "*/build/outputs/apk/*.apk" \
             -print
 
-          APK=$(find app/build/outputs/apk \
+          APK=$(find . \
             -type f \
-            -name "*.apk" \
+            -path "*/build/outputs/apk/*.apk" \
             | head -n 1)
 
           if [ -z "$APK" ]; then
-            echo "::error::Maxx Store APK not found."
+            echo "::error::Maxx Store APK was not found."
             exit 1
           fi
 
-          echo "APK found:"
-          echo "$APK"
+          echo "Found APK: $APK"
 
-          cp "$APK" \
-            release/MaxxStore-debug.apk
+          cp "$APK" release/MaxxStore-debug.apk
 
           ls -lh release/MaxxStore-debug.apk
 
-      # ----------------------------------------------------------
-      # Generate version/tag
-      # ----------------------------------------------------------
       - name: Generate release tag
         id: release
         run: |
           TAG="maxxstore-${{ github.run_number }}"
-
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-
           echo "Release: $TAG"
 
-      # ----------------------------------------------------------
-      # Publish GitHub Pre-release
-      # ----------------------------------------------------------
       - name: Publish Pre-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -135,9 +112,6 @@ jobs:
             --title "Maxx Store ${{ steps.release.outputs.tag }}" \
             --generate-notes
 
-      # ----------------------------------------------------------
-      # GitHub Actions summary
-      # ----------------------------------------------------------
       - name: Build Summary
         run: |
           {
@@ -149,6 +123,6 @@ jobs:
             echo "- Build: \`${{ github.run_number }}\`"
             echo "- Variant: \`vanillaDebug\`"
             echo "- Package: \`com.maxxos.store\`"
-            echo "- Type: Pre-release"
+            echo "- Release: GitHub Pre-release"
             echo "- APK: \`MaxxStore-debug.apk\`"
           } >> "$GITHUB_STEP_SUMMARY"
