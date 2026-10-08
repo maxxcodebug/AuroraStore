@@ -45,15 +45,16 @@ jobs:
           echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> "$GITHUB_ENV"
 
-          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
 
-          if [ ! -x "$SDKMANAGER" ]; then
-            echo "::error::sdkmanager not found at $SDKMANAGER"
-            find "$ANDROID_HOME/cmdline-tools" -maxdepth 3 -type f -name sdkmanager -print || true
+          if [ -z "$SDKMANAGER" ]; then
+            echo "::error::sdkmanager not found"
+            find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -print || true
             exit 1
           fi
 
-          echo "Using:"
+          echo "Using sdkmanager:"
+          echo "$SDKMANAGER"
           "$SDKMANAGER" --version
 
       - name: Accept Android SDK licenses
@@ -61,7 +62,7 @@ jobs:
         run: |
           set -e
 
-          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
 
           yes | "$SDKMANAGER" \
             --sdk_root="$ANDROID_HOME" \
@@ -72,7 +73,7 @@ jobs:
         run: |
           set -e
 
-          SDKMANAGER="$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
 
           echo "Installing Android SDK packages..."
 
