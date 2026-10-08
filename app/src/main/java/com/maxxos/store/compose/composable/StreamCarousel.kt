@@ -1,50 +1,52 @@
 // Copyright (C) 2026 MaxxOS. All rights reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-/*
- * SPDX-FileCopyrightText: 2026 Aurora OSS
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+// SPDX-FileCopyrightText: 2026 Aurora OSS
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 package com.maxxos.store.compose.composable
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewWrapper
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamBundle
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.maxxos.store.R
 import com.maxxos.store.compose.composable.app.AppListItem
-import com.maxxos.store.compose.composable.app.LargeAppListItem
-import com.maxxos.store.compose.preview.ThemePreviewProvider
 import kotlinx.coroutines.flow.distinctUntilChanged
 
 private const val LOAD_MORE_THRESHOLD = 2
@@ -66,86 +68,80 @@ fun StreamCarousel(
             val last = lazyListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
             val total = lazyListState.layoutInfo.totalItemsCount
             last >= total - LOAD_MORE_THRESHOLD
-        }.distinctUntilChanged().collect { reachedEnd ->
-            if (reachedEnd && bundleLoaded) onScrolledToEnd()
-        }
+        }.distinctUntilChanged().collect { if (it && bundleLoaded) onScrolledToEnd() }
     }
 
     if (streamBundle == null) {
         LazyColumn(
             modifier = modifier.fillMaxSize(),
             state = lazyListState,
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
-        ) {
-            items(5) { ShimmerCarouselSection() }
-        }
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) { items(5) { ShimmerCarouselSection() } }
         return
     }
 
     val clusters = streamBundle.streamClusters.values
-        .map { cluster ->
-            cluster.copy(clusterAppList = cluster.clusterAppList.distinctBy { it.packageName })
-        }
-        .filter { cluster ->
-            cluster.clusterAppList.isNotEmpty() &&
-                cluster.clusterTitle.isNotBlank() &&
-                (!filterSingleAppClusters || cluster.clusterAppList.size > 1)
-        }
+        .map { it.copy(clusterAppList = it.clusterAppList.distinctBy { app -> app.packageName }) }
+        .filter { it.clusterAppList.isNotEmpty() && it.clusterTitle.isNotBlank() && (!filterSingleAppClusters || it.clusterAppList.size > 1) }
 
     if (clusters.isEmpty()) {
-        Placeholder(
-            modifier = modifier,
-            painter = painterResource(R.drawable.ic_apps),
-            message = stringResource(R.string.no_apps_available)
-        )
+        Placeholder(modifier = modifier, painter = painterResource(R.drawable.ic_apps), message = stringResource(R.string.no_apps_available))
         return
     }
 
     LazyColumn(
         modifier = modifier.fillMaxSize(),
         state = lazyListState,
-        verticalArrangement = Arrangement.spacedBy(
-            dimensionResource(
-                if (clusters.size == 1) {
-                    R.dimen.spacing_medium
-                } else {
-                    R.dimen.spacing_xsmall
-                }
-            )
-        )
+        contentPadding = PaddingValues(top = 2.dp, bottom = 22.dp),
+        verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
-        if (clusters.size == 1) {
-            val apps = clusters.first().clusterAppList
-            items(count = apps.size, key = { apps[it].id }) { index ->
-                LargeAppListItem(
-                    app = apps[index],
-                    onClick = { onAppClick(apps[index]) }
+        item(key = "featured") { FeaturedClusterCard(clusters.first(), onAppClick) }
+        clusters.drop(1).forEach { cluster ->
+            item(key = "header_${cluster.id}") {
+                MaxxSectionTitle(
+                    title = cluster.clusterTitle,
+                    action = if (cluster.clusterBrowseUrl.isNotBlank()) "See all" else null,
+                    onAction = if (cluster.clusterBrowseUrl.isNotBlank()) ({ onHeaderClick(cluster) }) else null
                 )
             }
-        } else {
-            clusters.forEach { cluster ->
-                item(key = "header_${cluster.id}") {
-                    SectionHeader(
-                        title = cluster.clusterTitle,
-                        onClick = if (cluster.clusterBrowseUrl.isNotBlank()) {
-                            { onHeaderClick(cluster) }
-                        } else {
-                            null
-                        }
-                    )
-                }
-                item(key = "row_${cluster.id}") {
-                    ClusterRow(
-                        cluster = cluster,
-                        onAppClick = onAppClick,
-                        onClusterScrolled = onClusterScrolled
-                    )
+            item(key = "row_${cluster.id}") {
+                LazyRow(contentPadding = PaddingValues(horizontal = 18.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    itemsIndexed(cluster.clusterAppList, key = { _, app -> app.packageName }) { _, app ->
+                        AppListItem(app = app, onClick = { onAppClick(app) })
+                    }
                 }
             }
         }
+        if (streamBundle.hasNext()) item(key = "loading_footer") { ShimmerCarouselSection() }
+    }
+}
 
-        if (streamBundle.hasNext()) {
-            item(key = "shimmer_footer") { ShimmerCarouselSection() }
+@Composable
+private fun FeaturedClusterCard(cluster: StreamCluster, onAppClick: (App) -> Unit) {
+    val app = cluster.clusterAppList.firstOrNull() ?: return
+    Surface(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+        shape = RoundedCornerShape(30.dp),
+        color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.84f),
+        tonalElevation = 2.dp
+    ) {
+        Box(Modifier.fillMaxWidth().height(188.dp)) {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current).data(app.iconArtwork.url).crossfade(true).build(),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(146.dp).align(Alignment.CenterEnd).padding(14.dp).clip(RoundedCornerShape(28.dp))
+            )
+            Column(
+                modifier = Modifier.align(Alignment.CenterStart).padding(start = 22.dp, end = 135.dp),
+                verticalArrangement = Arrangement.spacedBy(5.dp)
+            ) {
+                Text("Featured", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+                Text(app.displayName, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                Text(app.developerName, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Button(onClick = { onAppClick(app) }, shape = RoundedCornerShape(50), contentPadding = PaddingValues(horizontal = 17.dp, vertical = 0.dp)) { Text("View app") }
+            }
         }
     }
 }
@@ -157,48 +153,15 @@ internal fun ClusterRow(
     onClusterScrolled: (StreamCluster) -> Unit = {}
 ) {
     val rowState = rememberLazyListState()
-    val reachedEnd by remember {
-        derivedStateOf {
-            val last = rowState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
-            val total = rowState.layoutInfo.totalItemsCount
-            last >= total - LOAD_MORE_THRESHOLD
+    val reachedEnd by remember { derivedStateOf {
+        val last = rowState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
+        val total = rowState.layoutInfo.totalItemsCount
+        last >= total - LOAD_MORE_THRESHOLD
+    } }
+    LaunchedEffect(reachedEnd) { if (reachedEnd && cluster.hasNext()) onClusterScrolled(cluster) }
+    LazyRow(state = rowState, contentPadding = PaddingValues(horizontal = 18.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        itemsIndexed(cluster.clusterAppList, key = { _, app -> app.packageName }) { _, app ->
+            AppListItem(app = app, onClick = { onAppClick(app) })
         }
     }
-
-    LaunchedEffect(reachedEnd) {
-        if (reachedEnd && cluster.hasNext()) onClusterScrolled(cluster)
-    }
-
-    LazyRow(
-        state = rowState,
-        contentPadding = PaddingValues(horizontal = dimensionResource(R.dimen.spacing_small)),
-        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_small))
-    ) {
-        itemsIndexed(
-            items = cluster.clusterAppList,
-            key = { _, app -> app.packageName }
-        ) { _, app ->
-            AppListItem(
-                app = app,
-                onClick = { onAppClick(app) }
-            )
-        }
-        if (cluster.hasNext()) {
-            item(key = "shimmer_${cluster.id}") { ShimmerAppListItem() }
-        }
-    }
-}
-
-@PreviewWrapper(ThemePreviewProvider::class)
-@Preview(showBackground = true)
-@Composable
-private fun StreamCarouselLoadingPreview() {
-    StreamCarousel(streamBundle = null)
-}
-
-@PreviewWrapper(ThemePreviewProvider::class)
-@Preview(showBackground = true)
-@Composable
-private fun StreamCarouselEmptyPreview() {
-    StreamCarousel(streamBundle = StreamBundle.EMPTY)
 }

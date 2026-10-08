@@ -56,14 +56,14 @@ fun MaxxNavigationPill(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 14.dp, vertical = 8.dp)
-            .shadow(10.dp, RoundedCornerShape(36.dp)),
-        shape = RoundedCornerShape(36.dp),
-        color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.96f),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.55f))
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .shadow(10.dp, RoundedCornerShape(32.dp)),
+        shape = RoundedCornerShape(32.dp),
+        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.94f),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.32f))
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(6.dp),
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -72,12 +72,12 @@ fun MaxxNavigationPill(
                 Surface(
                     onClick = { onSelected(index) },
                     modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(28.dp),
+                    shape = RoundedCornerShape(26.dp),
                     color = if (selected) MaterialTheme.colorScheme.primary else Color.Transparent,
                     contentColor = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onPrimaryContainer
                 ) {
                     Box(
-                        modifier = Modifier.padding(horizontal = 5.dp, vertical = 8.dp),
+                        modifier = Modifier.padding(horizontal = 5.dp, vertical = 9.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         val iconContent: @Composable () -> Unit = {

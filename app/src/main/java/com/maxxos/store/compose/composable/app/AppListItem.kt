@@ -21,15 +21,15 @@ package com.maxxos.store.compose.composable.app
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -58,37 +58,22 @@ import com.maxxos.store.compose.preview.ThemePreviewProvider
 @Composable
 fun AppListItem(modifier: Modifier = Modifier, app: App, onClick: () -> Unit = {}) {
     Column(
-        modifier = modifier
-            .width(dimensionResource(R.dimen.icon_size_cluster))
-            .clickable(onClick = onClick)
-            .padding(all = dimensionResource(R.dimen.spacing_xsmall)),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(
-            dimensionResource(R.dimen.spacing_xsmall),
-            Alignment.CenterVertically
-        )
+        modifier = modifier.width(86.dp).clickable(onClick = onClick),
+        horizontalAlignment = Alignment.Start,
+        verticalArrangement = Arrangement.spacedBy(7.dp)
     ) {
         AsyncImage(
-            modifier = Modifier
-                .fillMaxWidth()
-                .aspectRatio(1f)
-                .clip(RoundedCornerShape(dimensionResource(R.dimen.radius_medium))),
-            model = ImageRequest.Builder(LocalContext.current)
-                .data(app.iconArtwork.url)
-                .crossfade(true)
-                .build(),
+            model = ImageRequest.Builder(LocalContext.current).data(app.iconArtwork.url).crossfade(true).build(),
             contentDescription = null,
-            contentScale = ContentScale.Crop
-
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.size(72.dp).clip(RoundedCornerShape(20.dp))
         )
+        Text(app.displayName, style = MaterialTheme.typography.labelLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
         Text(
-            modifier = Modifier
-                .fillMaxWidth(),
-            text = app.displayName,
-            style = MaterialTheme.typography.labelMedium,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-            textAlign = TextAlign.Start
+            if (app.size > 0) com.maxxos.store.util.CommonUtil.addSiPrefix(app.size) else app.downloadString,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            maxLines = 1
         )
     }
 }

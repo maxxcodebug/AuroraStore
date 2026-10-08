@@ -20,20 +20,27 @@ package com.maxxos.store.compose.ui.commons
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -70,6 +77,12 @@ fun MoreSheet(
     viewModel: MoreViewModel = hiltViewModel()
 ) {
     val mainItems = listOf(
+        MoreItem(R.string.title_notifications, R.drawable.ic_notifications) {
+            onNavigateTo(Destination.Notifications)
+        },
+        MoreItem(R.string.title_download_manager, R.drawable.ic_download_manager) {
+            onNavigateTo(Destination.Downloads)
+        },
         MoreItem(R.string.title_apps_games, R.drawable.ic_apps) {
             onNavigateTo(Destination.Installed)
         },
@@ -92,71 +105,46 @@ fun MoreSheet(
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
-        sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+        sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
+        shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp),
+        containerColor = MaterialTheme.colorScheme.surface
     ) {
-        AccountHeader(
-            viewModel = viewModel,
-            onNavigateToAccounts = {
-                onNavigateTo(Destination.Accounts)
-                onDismiss()
-            }
-        )
-
-        HorizontalDivider()
-
-        Column(
-            Modifier.padding(
-                horizontal = dimensionResource(R.dimen.spacing_small),
-                vertical = dimensionResource(R.dimen.spacing_small)
-            )
-        ) {
+        Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp)) {
+            AccountHeader(viewModel, onNavigateToAccounts)
+            Spacer(Modifier.height(4.dp))
             mainItems.forEach { item ->
-                NavigationDrawerItem(
-                    icon = {
-                        Icon(
-                            painter = painterResource(item.iconRes),
-                            contentDescription = null
-                        )
-                    },
-                    label = { Text(stringResource(item.titleRes)) },
-                    selected = false,
-                    onClick = {
-                        item.onClick()
-                        onDismiss()
-                    }
-                )
+                MaxxMenuItem(item, onDismiss)
             }
-        }
-
-        HorizontalDivider()
-
-        Column(
-            Modifier.padding(
-                horizontal = dimensionResource(R.dimen.spacing_small),
-                vertical = dimensionResource(R.dimen.spacing_small)
-            )
-        ) {
+            Spacer(Modifier.height(8.dp))
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.45f))
+            Spacer(Modifier.height(8.dp))
             extraItems.forEach { item ->
-                NavigationDrawerItem(
-                    icon = {
-                        Icon(
-                            painter = painterResource(item.iconRes),
-                            contentDescription = null
-                        )
-                    },
-                    label = { Text(stringResource(item.titleRes)) },
-                    selected = false,
-                    onClick = {
-                        item.onClick()
-                        onDismiss()
-                    }
-                )
+                MaxxMenuItem(item, onDismiss)
             }
+            Spacer(Modifier.height(10.dp))
         }
-
-        Spacer(Modifier.navigationBarsPadding())
     }
 }
+
+@Composable
+private fun MaxxMenuItem(item: MoreItem, onDismiss: () -> Unit) {
+    Card(
+        onClick = { item.onClick(); onDismiss() },
+        modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.48f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+    ) {
+        Row(Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(42.dp).clip(RoundedCornerShape(14.dp)).background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
+                Icon(painterResource(item.iconRes), contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+            }
+            Text(stringResource(item.titleRes), modifier = Modifier.weight(1f).padding(start = 14.dp), style = MaterialTheme.typography.titleSmall)
+            Icon(painterResource(R.drawable.ic_arrow_right), contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+    }
+}
+
 
 @Composable
 private fun AccountHeader(viewModel: MoreViewModel, onNavigateToAccounts: () -> Unit) {
@@ -166,7 +154,7 @@ private fun AccountHeader(viewModel: MoreViewModel, onNavigateToAccounts: () -> 
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(dimensionResource(R.dimen.spacing_large)),
+            .padding(vertical = 10.dp, horizontal = 6.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(

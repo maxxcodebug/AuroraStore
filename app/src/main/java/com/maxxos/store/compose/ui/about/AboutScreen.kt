@@ -27,6 +27,7 @@ import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import com.maxxos.store.compose.composable.MaxxBackground
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -77,133 +78,65 @@ fun AboutScreen() {
     var showCredits by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
 
-    if (showCredits) {
-        MaxxCreditsDialog(onDismiss = { showCredits = false })
-    }
+    if (showCredits) MaxxCreditsDialog { showCredits = false }
 
     Scaffold(
+        containerColor = Color.Transparent,
         topBar = { TopAppBar(title = stringResource(R.string.title_about)) }
     ) { padding ->
-        LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(padding),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp)
-        ) {
-            item { MaxxBrandCard() }
-            item {
-                MaxxAboutAction(
-                    iconRes = R.drawable.ic_code,
-                    title = stringResource(R.string.maxx_store_github),
-                    summary = stringResource(R.string.maxx_store_github_summary),
-                    onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(MAXXOS_GITHUB))) }
-                )
-            }
-            item {
-                MaxxAboutAction(
-                    iconRes = R.drawable.ic_about,
-                    title = stringResource(R.string.maxx_store_credits),
-                    summary = stringResource(R.string.maxx_store_credits_summary),
-                    onClick = { showCredits = true }
-                )
-            }
-            item {
-                Text(
-                    text = stringResource(R.string.maxx_store_copyright),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-                    textAlign = TextAlign.Center
-                )
+        MaxxBackground {
+            Column(
+                modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 18.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(Modifier.height(20.dp))
+                MaxxBrandHeader()
+                Spacer(Modifier.height(24.dp))
+                MaxxAboutAction(R.drawable.ic_code, stringResource(R.string.maxx_store_github), stringResource(R.string.maxx_store_github_summary)) {
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(MAXXOS_GITHUB)))
+                }
+                Spacer(Modifier.height(10.dp))
+                MaxxAboutAction(R.drawable.ic_about, stringResource(R.string.maxx_store_credits), stringResource(R.string.maxx_store_credits_summary)) { showCredits = true }
+                Spacer(Modifier.height(18.dp))
+                Text(stringResource(R.string.maxx_store_copyright), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
             }
         }
     }
 }
 
 @Composable
-private fun MaxxBrandCard() {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(32.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-    ) {
+private fun MaxxBrandHeader() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(
-            modifier = Modifier.fillMaxWidth().background(
-                Brush.linearGradient(
-                    listOf(MaterialTheme.colorScheme.primaryContainer, MaterialTheme.colorScheme.tertiaryContainer)
-                )
-            ).padding(28.dp),
+            modifier = Modifier.size(108.dp).clip(RoundedCornerShape(34.dp)).background(Brush.linearGradient(listOf(Color(0xFF174B43), Color(0xFF8DE1C9)))),
             contentAlignment = Alignment.Center
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                MaxxLogo(Modifier.size(92.dp))
-                Spacer(Modifier.height(14.dp))
-                Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                Text(stringResource(R.string.maxx_store_tagline), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    stringResource(R.string.version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.primary
-                )
-                Spacer(Modifier.height(10.dp))
-                androidx.compose.material3.Surface(
-                    shape = CircleShape,
-                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.72f)
-                ) {
-                    Text(
-                        stringResource(R.string.maxx_store_built_for),
-                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
-            }
+            Icon(painterResource(R.drawable.ic_maxxos_logo), contentDescription = stringResource(R.string.app_name), modifier = Modifier.fillMaxSize().padding(18.dp), tint = Color.Unspecified)
+        }
+        Spacer(Modifier.height(14.dp))
+        Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+        Text(stringResource(R.string.maxx_store_tagline), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Spacer(Modifier.height(8.dp))
+        Card(shape = RoundedCornerShape(50), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) {
+            Text(stringResource(R.string.version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE), modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
         }
     }
 }
 
 @Composable
-private fun MaxxLogo(modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier.clip(RoundedCornerShape(28.dp)).background(
-            Brush.linearGradient(listOf(Color(0xFF174B43), Color(0xFF8DE1C9)))
-        ),
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            painter = painterResource(R.drawable.ic_maxxos_logo),
-            contentDescription = stringResource(R.string.app_name),
-            modifier = Modifier.fillMaxSize().padding(12.dp)
-        )
-    }
-}
-
-@Composable
-private fun MaxxAboutAction(
-    iconRes: Int,
-    title: String,
-    summary: String,
-    onClick: () -> Unit
-) {
+private fun MaxxAboutAction(iconRes: Int, title: String, summary: String, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f))
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.86f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Box(
-                modifier = Modifier.size(48.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer),
-                contentAlignment = Alignment.Center
-            ) {
+        Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(50.dp).clip(RoundedCornerShape(17.dp)).background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
                 Icon(painterResource(iconRes), contentDescription = null, tint = MaterialTheme.colorScheme.primary)
             }
-            Spacer(Modifier.width(14.dp))
-            Column(Modifier.weight(1f)) {
+            Column(Modifier.weight(1f).padding(horizontal = 14.dp)) {
                 Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                 Text(summary, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
@@ -214,13 +147,7 @@ private fun MaxxAboutAction(
 
 @Composable
 private fun MaxxCreditsDialog(onDismiss: () -> Unit) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        icon = { Icon(painterResource(R.drawable.ic_about), contentDescription = null) },
-        title = { Text(stringResource(R.string.maxx_store_credits_title)) },
-        text = { Text(stringResource(R.string.maxx_store_credits_body)) },
-        confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(android.R.string.ok)) } }
-    )
+    AlertDialog(onDismissRequest = onDismiss, icon = { Icon(painterResource(R.drawable.ic_about), contentDescription = null) }, title = { Text(stringResource(R.string.maxx_store_credits_title)) }, text = { Text(stringResource(R.string.maxx_store_credits_body)) }, confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(android.R.string.ok)) } })
 }
 
 @PreviewWrapper(ThemePreviewProvider::class)

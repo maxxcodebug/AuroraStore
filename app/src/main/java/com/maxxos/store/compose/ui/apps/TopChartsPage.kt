@@ -20,6 +20,7 @@ package com.maxxos.store.compose.ui.apps
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,8 +30,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.SecondaryScrollableTabRow
-import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -42,6 +41,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -52,6 +52,7 @@ import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.helpers.contracts.TopChartsContract
 import com.maxxos.store.R
+import com.maxxos.store.compose.composable.MaxxPill
 import com.maxxos.store.compose.composable.Placeholder
 import com.maxxos.store.compose.composable.ShimmerAppRow
 import com.maxxos.store.compose.composable.app.LargeAppListItem
@@ -130,83 +131,62 @@ private fun TopChartsBody(
     onRetry: () -> Unit = {},
     onAppClick: (App) -> Unit = {}
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        SecondaryScrollableTabRow(
-            selectedTabIndex = selectedIndex,
-            edgePadding = dimensionResource(R.dimen.spacing_small)
+    Column(Modifier.fillMaxSize()) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             chartTitles.forEachIndexed { index, titleRes ->
-                Tab(
+                MaxxPill(
+                    text = stringResource(titleRes),
                     selected = selectedIndex == index,
-                    onClick = { onTabSelected(index) },
-                    text = { Text(stringResource(titleRes)) }
+                    onClick = { onTabSelected(index) }
                 )
             }
         }
-
         when {
             state is ViewState.Error -> Placeholder(
-                modifier = Modifier.weight(1f),
-                painter = painterResource(R.drawable.ic_apps),
-                message = stringResource(R.string.no_apps_available),
-                actionLabel = stringResource(R.string.action_retry),
-                onAction = onRetry
+                modifier = Modifier.weight(1f), painter = painterResource(R.drawable.ic_apps),
+                message = stringResource(R.string.no_apps_available), actionLabel = stringResource(R.string.action_retry), onAction = onRetry
             )
-
             cluster != null && cluster.clusterAppList.isEmpty() -> Placeholder(
-                modifier = Modifier.weight(1f),
-                painter = painterResource(R.drawable.ic_apps),
-                message = stringResource(R.string.no_apps_available)
+                modifier = Modifier.weight(1f), painter = painterResource(R.drawable.ic_apps), message = stringResource(R.string.no_apps_available)
             )
-
             cluster != null -> {
                 val apps = cluster.clusterAppList
                 LazyColumn(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
+                    modifier = Modifier.weight(1f).fillMaxWidth(),
                     state = listState,
-                    contentPadding = PaddingValues(
-                        vertical = dimensionResource(R.dimen.spacing_small)
-                    ),
-                    verticalArrangement = Arrangement.spacedBy(
-                        dimensionResource(R.dimen.spacing_xsmall)
-                    )
+                    contentPadding = PaddingValues(top = 4.dp, bottom = 18.dp),
+                    verticalArrangement = Arrangement.spacedBy(2.dp)
                 ) {
                     items(count = apps.size, key = { apps[it].id }) { index ->
-                        LargeAppListItem(
-                            app = apps[index],
-                            onClick = { onAppClick(apps[index]) }
-                        )
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = String.format("%02d", index + 1),
+                                modifier = Modifier.padding(start = 18.dp, end = 4.dp),
+                                style = androidx.compose.material3.MaterialTheme.typography.labelLarge,
+                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            LargeAppListItem(
+                                modifier = Modifier.weight(1f),
+                                app = apps[index],
+                                onClick = { onAppClick(apps[index]) }
+                            )
+                        }
                     }
                     if (cluster.hasNext()) {
                         item(key = "progress") {
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(dimensionResource(R.dimen.spacing_large)),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                CircularProgressIndicator()
-                            }
+                            Box(Modifier.fillMaxWidth().padding(24.dp), contentAlignment = Alignment.Center) { CircularProgressIndicator() }
                         }
                     }
                 }
             }
-
             else -> LazyColumn(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth(),
-                contentPadding = PaddingValues(vertical = dimensionResource(R.dimen.spacing_small)),
-                verticalArrangement = Arrangement.spacedBy(
-                    dimensionResource(R.dimen.spacing_xsmall)
-                )
-            ) {
-                items(8) { ShimmerAppRow() }
-            }
+                modifier = Modifier.weight(1f).fillMaxWidth(),
+                contentPadding = PaddingValues(vertical = 8.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) { items(8) { ShimmerAppRow() } }
         }
     }
 }

@@ -20,11 +20,15 @@ package com.maxxos.store.compose.ui.apps
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -77,12 +81,15 @@ private fun CategoriesBody(list: List<Category>?, onCategoryClick: (Category) ->
             items(10) { ShimmerCategoryRow() }
         }
     } else {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(count = list.size, key = { list[it].title }) { index ->
-                CategoryItem(
-                    category = list[index],
-                    onClick = { onCategoryClick(list[index]) }
-                )
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(12.dp),
+            horizontalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(10.dp),
+            verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(10.dp)
+        ) {
+            items(list, key = { it.title }) { category ->
+                CategoryItem(category = category, onClick = { onCategoryClick(category) })
             }
         }
     }

@@ -24,17 +24,19 @@ package com.maxxos.store.compose.ui.main
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.Badge
-import androidx.compose.material3.BadgedBox
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,7 +47,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -55,8 +60,9 @@ import com.aurora.extensions.requiresObbDir
 import com.maxxos.store.MainViewModel
 import com.maxxos.store.R
 import com.maxxos.store.compose.composable.InsufficientStorageDialog
+import com.maxxos.store.compose.composable.MaxxBackground
+import com.maxxos.store.compose.composable.maxxGreeting
 import com.maxxos.store.compose.composable.MaxxNavigationPill
-import com.maxxos.store.compose.composable.TopAppBar
 import com.maxxos.store.compose.composable.TrackerUpdateWarningDialog
 import com.maxxos.store.compose.composition.LocalNetworkStatus
 import com.maxxos.store.compose.navigation.Destination
@@ -76,7 +82,6 @@ import com.maxxos.store.util.Preferences
 import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_WARN_TRACKERS
 import com.maxxos.store.util.StorageUtil
 import com.maxxos.store.viewmodel.all.UpdatesViewModel
-import com.maxxos.store.viewmodel.notifications.NotificationsViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -89,12 +94,63 @@ private enum class MainTab(
     UPDATES(R.string.title_updates, R.drawable.ic_updates)
 }
 
+
+@Composable
+private fun MaxxHomeHeader(
+    onMenu: () -> Unit,
+    onSearch: () -> Unit
+) {
+    Surface(
+        color = androidx.compose.material3.MaterialTheme.colorScheme.background.copy(alpha = 0.94f),
+        tonalElevation = 0.dp,
+        shadowElevation = 0.dp
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 8.dp, top = 10.dp, bottom = 8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
+                Text(
+                    text = "Maxx Store",
+                    style = androidx.compose.material3.MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = maxxGreeting(),
+                    style = androidx.compose.material3.MaterialTheme.typography.bodyMedium,
+                    color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            HeaderIconButton(R.drawable.ic_round_search, "Search", onSearch)
+            HeaderIconButton(R.drawable.ic_settings_account, "Menu", onMenu)
+        }
+    }
+}
+
+@Composable
+private fun HeaderIconButton(icon: Int, description: String, onClick: () -> Unit, badge: Int = 0) {
+    Box {
+        IconButton(onClick = onClick) {
+            Icon(painterResource(icon), contentDescription = description)
+        }
+        if (badge > 0) {
+            Surface(
+                modifier = Modifier.align(Alignment.TopEnd).padding(top = 4.dp, end = 3.dp),
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(20.dp),
+                color = androidx.compose.material3.MaterialTheme.colorScheme.primary,
+                contentColor = androidx.compose.material3.MaterialTheme.colorScheme.onPrimary
+            ) {
+                Text(badge.coerceAtMost(99).toString(), modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp), style = androidx.compose.material3.MaterialTheme.typography.labelSmall)
+            }
+        }
+    }
+}
+
 @Composable
 fun MainScreen(
     initialTab: Int = 0,
     mainViewModel: MainViewModel = hiltViewModel(),
     updatesViewModel: UpdatesViewModel = hiltViewModel(),
-    notificationsViewModel: NotificationsViewModel = hiltViewModel(),
     onNavigateTo: (Destination) -> Unit = {}
 ) {
     val context = LocalContext.current
@@ -103,7 +159,6 @@ fun MainScreen(
         initialValue = null
     )
     val updateCount = updates?.size ?: 0
-    val notificationCount by notificationsViewModel.unreadCount.collectAsStateWithLifecycle()
     val downloads by updatesViewModel.downloadsList.collectAsStateWithLifecycle()
 
     val coroutineScope = rememberCoroutineScope()
@@ -189,45 +244,12 @@ fun MainScreen(
     }
 
     Scaffold(
+        containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
-            TopAppBar(
-                title = stringResource(MainTab.entries[pagerState.currentPage].labelRes),
-                showNavigationIcon = false,
-                actions = {
-                    IconButton(onClick = { onNavigateTo(Destination.Notifications) }) {
-                        BadgedBox(
-                            badge = {
-                                if (notificationCount > 0) Badge { Text("$notificationCount") }
-                            }
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.ic_notifications),
-                                contentDescription = stringResource(R.string.title_notifications)
-                            )
-                        }
-                    }
-                    IconButton(onClick = { onNavigateTo(Destination.Downloads) }) {
-                        Icon(
-                            painter = painterResource(R.drawable.ic_download_manager),
-                            contentDescription = stringResource(R.string.title_download_manager)
-                        )
-                    }
-                    IconButton(onClick = { showMoreSheet = true }) {
-                        Icon(
-                            painter = painterResource(R.drawable.ic_settings_account),
-                            contentDescription = stringResource(R.string.title_more)
-                        )
-                    }
-                }
+            MaxxHomeHeader(
+                onMenu = { showMoreSheet = true },
+                onSearch = { onNavigateTo(Destination.Search) }
             )
-        },
-        floatingActionButton = {
-            FloatingActionButton(onClick = { onNavigateTo(Destination.Search) }) {
-                Icon(
-                    painter = painterResource(R.drawable.ic_round_search),
-                    contentDescription = stringResource(R.string.action_search)
-                )
-            }
         },
         bottomBar = {
             MaxxNavigationPill(
@@ -239,12 +261,13 @@ fun MainScreen(
             )
         }
     ) { paddingValues ->
-        Box(
-            modifier = Modifier
-                .padding(paddingValues)
-                .consumeWindowInsets(paddingValues)
-                .fillMaxSize()
-        ) {
+        MaxxBackground {
+            Box(
+                modifier = Modifier
+                    .padding(paddingValues)
+                    .consumeWindowInsets(paddingValues)
+                    .fillMaxSize()
+            ) {
             HorizontalPager(
                 state = pagerState,
                 userScrollEnabled = false,
@@ -323,6 +346,7 @@ fun MainScreen(
                         )
                     }
                 }
+            }
             }
         }
     }

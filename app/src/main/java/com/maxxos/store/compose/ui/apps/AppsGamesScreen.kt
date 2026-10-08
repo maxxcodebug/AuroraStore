@@ -24,20 +24,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.PrimaryTabRow
-import androidx.compose.material3.Tab
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aurora.gplayapi.helpers.contracts.StreamContract
 import com.aurora.gplayapi.helpers.contracts.TopChartsContract
 import com.maxxos.store.R
+import com.maxxos.store.compose.composable.MaxxPill
 import com.maxxos.store.compose.navigation.Destination
 import com.maxxos.store.util.Preferences
 import com.maxxos.store.viewmodel.category.CategoryViewModel
@@ -84,19 +88,15 @@ fun AppsGamesScreen(
     val coroutineScope = rememberCoroutineScope()
 
     Column(modifier = Modifier.fillMaxSize()) {
-        PrimaryTabRow(
-            modifier = Modifier.fillMaxWidth(),
-            selectedTabIndex = pagerState.currentPage
+        Row(
+            modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             tabs.forEachIndexed { index, tab ->
-                Tab(
+                MaxxPill(
+                    text = stringResource(tab.titleRes),
                     selected = pagerState.currentPage == index,
-                    onClick = {
-                        coroutineScope.launch {
-                            pagerState.animateScrollToPage(index)
-                        }
-                    },
-                    text = { Text(stringResource(tab.titleRes)) }
+                    onClick = { coroutineScope.launch { pagerState.animateScrollToPage(index) } }
                 )
             }
         }
