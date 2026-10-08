@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import androidx.compose.material3.Checkbox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.aurora.store.R
+import com.maxxos.store.R
 
 @Composable
 fun DeviceListItem(

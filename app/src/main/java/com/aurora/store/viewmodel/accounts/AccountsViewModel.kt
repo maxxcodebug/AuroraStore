@@ -16,17 +16,17 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.accounts
+package com.maxxos.store.viewmodel.accounts
 
 import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.data.AccountRepository
-import com.aurora.store.data.model.AccountType
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.GoogleAccountTokenProvider
-import com.aurora.store.data.room.account.Account
+import com.maxxos.store.data.AccountRepository
+import com.maxxos.store.data.model.AccountType
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.GoogleAccountTokenProvider
+import com.maxxos.store.data.room.account.Account
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

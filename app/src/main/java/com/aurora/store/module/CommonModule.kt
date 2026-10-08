@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.module
+package com.maxxos.store.module
 
 import com.aurora.gplayapi.data.serializers.LocaleSerializer
 import com.aurora.gplayapi.data.serializers.PropertiesSerializer

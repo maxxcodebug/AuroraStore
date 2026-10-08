@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.onboarding
+package com.maxxos.store.compose.ui.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -52,13 +52,13 @@ import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aurora.extensions.isWindowCompact
-import com.aurora.store.R
-import com.aurora.store.compose.composable.Logo
-import com.aurora.store.compose.composable.PageIndicator
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.onboarding.navigation.OnboardingPage
-import com.aurora.store.viewmodel.onboarding.OnboardingUiState
-import com.aurora.store.viewmodel.onboarding.OnboardingViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.Logo
+import com.maxxos.store.compose.composable.PageIndicator
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.onboarding.navigation.OnboardingPage
+import com.maxxos.store.viewmodel.onboarding.OnboardingUiState
+import com.maxxos.store.viewmodel.onboarding.OnboardingViewModel
 import kotlinx.coroutines.launch
 
 @Composable

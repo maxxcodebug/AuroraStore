@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.content.Context
 import android.content.Intent
@@ -47,9 +47,9 @@ import com.aurora.extensions.isRAndAbove
 import com.aurora.extensions.isTAndAbove
 import com.aurora.extensions.isVAndAbove
 import com.aurora.extensions.isValidApp
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.model.BuildType
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.model.BuildType
 import java.util.Locale
 
 object PackageUtil {

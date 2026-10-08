@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -44,11 +44,11 @@ import com.aurora.extensions.isTAndAbove
 import com.aurora.extensions.requiresObbDir
 import com.aurora.extensions.toast
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.model.Permission
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.model.Permission
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.util.PackageUtil
 
 class PermissionProvider(private val fragment: Fragment) :
     ActivityResultCallback<ActivityResult> {

@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.work
+package com.maxxos.store.data.work
 
 import android.app.NotificationManager
 import android.content.Context
@@ -44,27 +44,27 @@ import com.aurora.gplayapi.data.models.PlayFile
 import com.aurora.gplayapi.helpers.AuthHelper
 import com.aurora.gplayapi.helpers.PurchaseHelper
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.data.AccountRepository
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.model.Algorithm
-import com.aurora.store.data.model.DownloadInfo
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.model.DownloadStatus.Companion.installerStates
-import com.aurora.store.data.network.HttpClient
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.GoogleAccountTokenProvider
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.download.DownloadDao
-import com.aurora.store.util.CertUtil
-import com.aurora.store.util.NotificationUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.PathUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_NOTIFICATION_PROGRESS
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.data.AccountRepository
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.model.Algorithm
+import com.maxxos.store.data.model.DownloadInfo
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.model.DownloadStatus.Companion.installerStates
+import com.maxxos.store.data.network.HttpClient
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.GoogleAccountTokenProvider
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.download.DownloadDao
+import com.maxxos.store.util.CertUtil
+import com.maxxos.store.util.NotificationUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.PathUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_NOTIFICATION_PROGRESS
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.io.File

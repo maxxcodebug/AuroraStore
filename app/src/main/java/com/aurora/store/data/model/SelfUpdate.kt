@@ -16,15 +16,15 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
 import android.content.Context
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.Artwork
 import com.aurora.gplayapi.data.models.EncodedCertificateSet
 import com.aurora.gplayapi.data.models.PlayFile
-import com.aurora.store.R
-import com.aurora.store.util.CertUtil
+import com.maxxos.store.R
+import com.maxxos.store.util.CertUtil
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -66,9 +66,9 @@ data class SelfUpdate(
 
     /**
      * Maps the feed entry onto a regular [App] so it can flow through the normal
-     * update pipeline ([com.aurora.store.data.room.update.Update.fromApp] →
+     * update pipeline ([com.maxxos.store.data.room.update.Update.fromApp] →
      * download → install). The certificate set is the currently installed app's own
-     * hashes so [com.aurora.store.data.room.update.Update.hasValidCert] holds and the
+     * hashes so [com.maxxos.store.data.room.update.Update.hasValidCert] holds and the
      * update is never filtered out as untrusted.
      */
     fun toApp(context: Context): App = App(

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.work
+package com.maxxos.store.data.work
 
 import android.content.Context
 import android.util.Log
@@ -29,7 +29,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.aurora.extensions.TAG
-import com.aurora.store.data.ExodusRepository
+import com.maxxos.store.data.ExodusRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 

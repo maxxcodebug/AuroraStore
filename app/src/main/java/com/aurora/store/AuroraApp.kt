@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store
+package com.maxxos.store
 
 import android.app.Activity
 import android.app.Application
@@ -34,14 +34,14 @@ import coil3.SingletonImageLoader
 import coil3.network.okhttp.OkHttpNetworkFetcherFactory
 import coil3.request.crossfade
 import com.aurora.extensions.setAppTheme
-import com.aurora.store.data.event.EventFlow
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.helper.UpdateHelper
-import com.aurora.store.data.receiver.PackageManagerReceiver
-import com.aurora.store.util.CommonUtil
-import com.aurora.store.util.NotificationUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
+import com.maxxos.store.data.event.EventFlow
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.helper.UpdateHelper
+import com.maxxos.store.data.receiver.PackageManagerReceiver
+import com.maxxos.store.util.CommonUtil
+import com.maxxos.store.util.NotificationUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
 import com.google.android.material.color.DynamicColors
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject

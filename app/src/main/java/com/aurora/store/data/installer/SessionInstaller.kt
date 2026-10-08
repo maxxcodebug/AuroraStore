@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer
+package com.maxxos.store.data.installer
 
 import android.app.PendingIntent
 import android.content.Context
@@ -38,21 +38,21 @@ import com.aurora.extensions.isSAndAbove
 import com.aurora.extensions.isTAndAbove
 import com.aurora.extensions.isUAndAbove
 import com.aurora.extensions.runOnUiThread
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.installer.AppInstaller.Companion.ACTION_INSTALL_STATUS
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_DISPLAY_NAME
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_PACKAGE_NAME
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_VERSION_CODE
-import com.aurora.store.data.installer.base.InstallerBase
-import com.aurora.store.data.model.BuildType
-import com.aurora.store.data.model.Installer
-import com.aurora.store.data.model.InstallerInfo
-import com.aurora.store.data.model.SessionInfo
-import com.aurora.store.data.receiver.InstallerStatusReceiver
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.util.PackageUtil.isSharedLibraryInstalled
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.installer.AppInstaller.Companion.ACTION_INSTALL_STATUS
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_DISPLAY_NAME
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_PACKAGE_NAME
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_VERSION_CODE
+import com.maxxos.store.data.installer.base.InstallerBase
+import com.maxxos.store.data.model.BuildType
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.data.model.InstallerInfo
+import com.maxxos.store.data.model.SessionInfo
+import com.maxxos.store.data.receiver.InstallerStatusReceiver
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.util.PackageUtil.isSharedLibraryInstalled
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import java.util.concurrent.ConcurrentHashMap

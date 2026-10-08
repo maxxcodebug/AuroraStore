@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.download
+package com.maxxos.store.data.room.download
 
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.updates
+package com.maxxos.store.compose.ui.updates
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,16 +36,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.aurora.store.R
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.SectionHeader
-import com.aurora.store.compose.composable.ShimmerUpdateItem
-import com.aurora.store.compose.composable.app.AppUpdateItem
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.viewmodel.all.UpdatesViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.SectionHeader
+import com.maxxos.store.compose.composable.ShimmerUpdateItem
+import com.maxxos.store.compose.composable.app.AppUpdateItem
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.viewmodel.all.UpdatesViewModel
 
 @Composable
 fun UpdatesScreen(

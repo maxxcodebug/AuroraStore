@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.app
+package com.maxxos.store.compose.composable.app
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -39,12 +39,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.util.CommonUtil
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.util.CommonUtil
 
 @Composable
 fun AppUpdateItem(

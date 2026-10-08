@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.work
+package com.maxxos.store.data.work
 
 import android.content.Context
 import android.util.Log
@@ -26,11 +26,11 @@ import androidx.work.WorkerParameters
 import com.aurora.extensions.TAG
 import com.aurora.gplayapi.data.models.AuthData
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.data.model.AccountType
-import com.aurora.store.data.providers.AccountProvider
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.GoogleAccountTokenProvider
-import com.aurora.store.util.Preferences
+import com.maxxos.store.data.model.AccountType
+import com.maxxos.store.data.providers.AccountProvider
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.GoogleAccountTokenProvider
+import com.maxxos.store.util.Preferences
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 

@@ -16,11 +16,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import android.content.Context
-import com.aurora.store.R
-import com.aurora.store.util.Preferences
+import com.maxxos.store.R
+import com.maxxos.store.util.Preferences
 import java.util.Locale
 
 /**

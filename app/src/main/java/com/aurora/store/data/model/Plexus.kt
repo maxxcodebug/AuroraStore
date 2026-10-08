@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
 import androidx.annotation.StringRes
-import com.aurora.store.R
+import com.maxxos.store.R
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

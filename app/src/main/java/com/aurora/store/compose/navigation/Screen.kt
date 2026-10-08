@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.navigation
+package com.maxxos.store.compose.navigation
 
 import android.os.Parcelable
 import androidx.navigation3.runtime.NavKey
 import com.aurora.gplayapi.data.models.StreamCluster
-import com.aurora.store.data.model.PermissionType
+import com.maxxos.store.data.model.PermissionType
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.network
+package com.maxxos.store.data.network
 
 import com.aurora.gplayapi.network.IHttpClient
 import dagger.Module

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.details
+package com.maxxos.store.compose.composable.details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -33,8 +33,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Composable to show a progress bar with rating for an app

@@ -15,7 +15,7 @@
  * SPDX-FileCopyrightText: 2026 Aurora OSS
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package com.aurora.store.compose.ui.sheets
+package com.maxxos.store.compose.ui.sheets
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -49,9 +49,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.aurora.store.R
-import com.aurora.store.data.model.Report
-import com.aurora.store.data.model.formatExodusDate
+import com.maxxos.store.R
+import com.maxxos.store.data.model.Report
+import com.maxxos.store.data.model.formatExodusDate
 
 /**
  * Bottom sheet that lists the versions known to Exodus for an app. Selecting one hands its version

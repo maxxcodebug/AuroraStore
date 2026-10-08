@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.downloads
+package com.maxxos.store.compose.ui.downloads
 
 import android.content.Context
-import com.aurora.store.R
-import com.aurora.store.compose.ui.commons.SortOrder
-import com.aurora.store.compose.ui.commons.enumValueOrDefault
-import com.aurora.store.data.model.DownloadSortBy
-import com.aurora.store.util.Preferences
+import com.maxxos.store.R
+import com.maxxos.store.compose.ui.commons.SortOrder
+import com.maxxos.store.compose.ui.commons.enumValueOrDefault
+import com.maxxos.store.data.model.DownloadSortBy
+import com.maxxos.store.util.Preferences
 
 data class DownloadSort(
     val sortBy: DownloadSortBy = DownloadSortBy.DATE_DOWNLOADED,

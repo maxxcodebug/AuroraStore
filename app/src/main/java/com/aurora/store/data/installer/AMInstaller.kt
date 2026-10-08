@@ -16,19 +16,19 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer
+package com.maxxos.store.data.installer
 
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.aurora.extensions.TAG
-import com.aurora.store.R
-import com.aurora.store.data.installer.base.InstallerBase
-import com.aurora.store.data.model.Installer
-import com.aurora.store.data.model.InstallerInfo
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.util.PackageUtil.isSharedLibraryInstalled
-import com.aurora.store.util.PathUtil
+import com.maxxos.store.R
+import com.maxxos.store.data.installer.base.InstallerBase
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.data.model.InstallerInfo
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.util.PackageUtil.isSharedLibraryInstalled
+import com.maxxos.store.util.PathUtil
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.util.zip.ZipEntry

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.receiver
+package com.maxxos.store.data.receiver
 
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
@@ -27,17 +27,17 @@ import androidx.core.content.getSystemService
 import androidx.work.WorkManager
 import com.aurora.Constants
 import com.aurora.extensions.isOAndAbove
-import com.aurora.store.data.helper.UpdateHelper.Companion.getAutoUpdateWork
-import com.aurora.store.data.model.UpdateMode
-import com.aurora.store.data.work.CacheWorker
-import com.aurora.store.util.CertUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_DISPENSER_URLS
-import com.aurora.store.util.Preferences.PREFERENCE_INTRO
-import com.aurora.store.util.Preferences.PREFERENCE_MIGRATION_VERSION
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_AUTO
-import com.aurora.store.util.Preferences.PREFERENCE_VENDING_VERSION
-import com.aurora.store.util.save
+import com.maxxos.store.data.helper.UpdateHelper.Companion.getAutoUpdateWork
+import com.maxxos.store.data.model.UpdateMode
+import com.maxxos.store.data.work.CacheWorker
+import com.maxxos.store.util.CertUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_DISPENSER_URLS
+import com.maxxos.store.util.Preferences.PREFERENCE_INTRO
+import com.maxxos.store.util.Preferences.PREFERENCE_MIGRATION_VERSION
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_AUTO
+import com.maxxos.store.util.Preferences.PREFERENCE_VENDING_VERSION
+import com.maxxos.store.util.save
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.favourite
+package com.maxxos.store.data.room.favourite
 
-import com.aurora.store.BuildConfig
+import com.maxxos.store.BuildConfig
 import kotlinx.serialization.Serializable
 
 @Serializable

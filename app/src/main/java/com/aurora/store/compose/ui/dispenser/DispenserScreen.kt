@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.dispenser
+package com.maxxos.store.compose.ui.dispenser
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -40,12 +40,12 @@ import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.extensions.copyToClipBoard
-import com.aurora.store.R
-import com.aurora.store.compose.composable.DispenserListItem
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.viewmodel.dispenser.DispenserViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.DispenserListItem
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.viewmodel.dispenser.DispenserViewModel
 
 @Composable
 fun DispenserScreen(viewModel: DispenserViewModel = hiltViewModel()) {

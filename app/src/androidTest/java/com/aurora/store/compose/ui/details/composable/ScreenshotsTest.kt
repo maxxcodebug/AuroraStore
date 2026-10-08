@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.composable
+package com.maxxos.store.compose.ui.details.composable
 
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.performSemanticsAction
 import com.aurora.gplayapi.data.models.Artwork
-import com.aurora.store.IsolatedTest
+import com.maxxos.store.IsolatedTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

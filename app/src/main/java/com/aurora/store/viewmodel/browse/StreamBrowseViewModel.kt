@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.browse
+package com.maxxos.store.viewmodel.browse
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -28,10 +28,10 @@ import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.exceptions.GooglePlayException
 import com.aurora.gplayapi.helpers.web.WebStreamHelper
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.PageResult
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.paging.GenericPagingSource.Companion.manualPager
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.PageResult
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.manualPager
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

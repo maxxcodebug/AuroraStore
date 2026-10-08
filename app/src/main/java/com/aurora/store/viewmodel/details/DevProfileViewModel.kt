@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.details
+package com.maxxos.store.viewmodel.details
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -30,9 +30,9 @@ import com.aurora.gplayapi.exceptions.GooglePlayException
 import com.aurora.gplayapi.helpers.AppDetailsHelper
 import com.aurora.gplayapi.helpers.StreamHelper
 import com.aurora.gplayapi.helpers.contracts.StreamContract
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.model.ViewState
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.model.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

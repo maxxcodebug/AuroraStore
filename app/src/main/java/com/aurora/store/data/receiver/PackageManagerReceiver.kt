@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.receiver
+package com.maxxos.store.data.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.installer.AppInstaller
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.installer.AppInstaller
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

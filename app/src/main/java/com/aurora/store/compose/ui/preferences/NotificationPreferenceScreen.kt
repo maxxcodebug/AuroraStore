@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences
+package com.maxxos.store.compose.ui.preferences
 
 import android.content.Intent
 import android.provider.Settings
@@ -44,12 +44,12 @@ import androidx.lifecycle.compose.LifecycleResumeEffect
 import com.aurora.Constants
 import com.aurora.extensions.areNotificationsEnabled
 import com.aurora.extensions.isOAndAbove
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_NOTIFICATION_PROGRESS
-import com.aurora.store.util.save
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_NOTIFICATION_PROGRESS
+import com.maxxos.store.util.save
 
 @Composable
 fun NotificationPreferenceScreen() {

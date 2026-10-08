@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.favourite
+package com.maxxos.store.compose.ui.favourite
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -57,25 +57,25 @@ import androidx.paging.compose.itemKey
 import com.aurora.Constants.JSON_MIME_TYPE
 import com.aurora.extensions.emptyPagingItems
 import com.aurora.extensions.toast
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.FavouriteListItem
-import com.aurora.store.compose.composable.InsufficientStorageDialog
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.SectionHeader
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.FavouritePreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.commons.InstallFavouritesDialog
-import com.aurora.store.compose.ui.favourite.menu.FavouriteMenu
-import com.aurora.store.compose.ui.favourite.menu.MenuItem
-import com.aurora.store.data.model.StorageRequirement
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.favourite.Favourite
-import com.aurora.store.util.StorageUtil
-import com.aurora.store.viewmodel.all.FavouriteViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.FavouriteListItem
+import com.maxxos.store.compose.composable.InsufficientStorageDialog
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.SectionHeader
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.FavouritePreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.commons.InstallFavouritesDialog
+import com.maxxos.store.compose.ui.favourite.menu.FavouriteMenu
+import com.maxxos.store.compose.ui.favourite.menu.MenuItem
+import com.maxxos.store.data.model.StorageRequirement
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.favourite.Favourite
+import com.maxxos.store.util.StorageUtil
+import com.maxxos.store.viewmodel.all.FavouriteViewModel
 import java.util.Calendar
 import kotlin.random.Random
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences
+package com.maxxos.store.compose.ui.preferences
 
 import android.content.Intent
 import android.provider.Settings
@@ -46,16 +46,16 @@ import androidx.core.net.toUri
 import com.aurora.extensions.isSAndAbove
 import com.aurora.extensions.isTAndAbove
 import com.aurora.extensions.setAppTheme
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.preferences.network.SingleChoiceDialog
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_DEFAULT_SELECTED_TAB
-import com.aurora.store.util.Preferences.PREFERENCE_DYNAMIC_COLORS
-import com.aurora.store.util.Preferences.PREFERENCE_FOR_YOU
-import com.aurora.store.util.Preferences.PREFERENCE_THEME_STYLE
-import com.aurora.store.util.save
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.preferences.network.SingleChoiceDialog
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_DEFAULT_SELECTED_TAB
+import com.maxxos.store.util.Preferences.PREFERENCE_DYNAMIC_COLORS
+import com.maxxos.store.util.Preferences.PREFERENCE_FOR_YOU
+import com.maxxos.store.util.Preferences.PREFERENCE_THEME_STYLE
+import com.maxxos.store.util.save
 
 @Composable
 fun UIPreferenceScreen() {

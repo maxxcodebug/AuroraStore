@@ -16,11 +16,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store
+package com.maxxos.store
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createComposeRule
-import com.aurora.store.compose.theme.AuroraTheme
+import com.maxxos.store.compose.theme.AuroraTheme
 import org.junit.Rule
 
 /**

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.navigation
+package com.maxxos.store.compose.ui.details.navigation
 
 import android.os.Parcelable
 import androidx.navigation3.runtime.NavKey

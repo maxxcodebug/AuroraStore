@@ -16,15 +16,15 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.dispenser
+package com.maxxos.store.viewmodel.dispenser
 
 import android.content.Context
 import androidx.core.content.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aurora.extensions.observeAsStateFlow
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_DISPENSER_URLS
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_DISPENSER_URLS
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

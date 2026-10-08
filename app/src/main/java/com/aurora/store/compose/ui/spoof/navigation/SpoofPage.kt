@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.spoof.navigation
+package com.maxxos.store.compose.ui.spoof.navigation
 
 import androidx.annotation.StringRes
-import com.aurora.store.R
+import com.maxxos.store.R
 
 /**
  * Pages that are shown in SpoofScreen

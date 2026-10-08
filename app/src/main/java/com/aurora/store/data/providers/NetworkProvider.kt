@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -24,7 +24,7 @@ import android.net.Network
 import android.net.NetworkRequest
 import androidx.core.content.getSystemService
 import com.aurora.extensions.isNAndAbove
-import com.aurora.store.data.model.NetworkStatus
+import com.maxxos.store.data.model.NetworkStatus
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

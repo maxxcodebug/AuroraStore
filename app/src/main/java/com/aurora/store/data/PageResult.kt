@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data
+package com.maxxos.store.data
 
 data class PageResult<T>(
     val items: List<T>,

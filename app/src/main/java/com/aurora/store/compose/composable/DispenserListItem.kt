@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -27,7 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import com.aurora.store.R
+import com.maxxos.store.R
 
 @Composable
 fun DispenserListItem(

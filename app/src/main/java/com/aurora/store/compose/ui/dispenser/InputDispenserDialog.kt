@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.dispenser
+package com.maxxos.store.compose.ui.dispenser
 
 import android.util.Patterns
 import androidx.compose.foundation.layout.Arrangement
@@ -43,7 +43,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.aurora.store.R
+import com.maxxos.store.R
 import kotlinx.coroutines.android.awaitFrame
 
 /**

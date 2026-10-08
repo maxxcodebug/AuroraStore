@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
@@ -26,8 +26,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Dialog for prompting users to restart Aurora Store

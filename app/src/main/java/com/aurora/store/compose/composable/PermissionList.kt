@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -46,13 +46,13 @@ import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.core.net.toUri
 import com.aurora.extensions.isTAndAbove
 import com.aurora.extensions.toast
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.Permission
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.data.providers.PermissionProvider.Companion.isGranted
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.Permission
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.data.providers.PermissionProvider.Companion.isGranted
+import com.maxxos.store.util.PackageUtil
 import kotlin.random.Random
 
 private const val TAG = "PermissionsScreen"

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.accounts.Account
 import android.accounts.AccountManager
@@ -30,9 +30,9 @@ import android.util.Base64
 import android.util.Log
 import com.aurora.Constants.PACKAGE_NAME_PLAY_STORE
 import com.aurora.extensions.TAG
-import com.aurora.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
-import com.aurora.store.util.CertUtil.GOOGLE_PLAY_AUTH_TOKEN_TYPE
-import com.aurora.store.util.CertUtil.GOOGLE_PLAY_CERT
+import com.maxxos.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
+import com.maxxos.store.util.CertUtil.GOOGLE_PLAY_AUTH_TOKEN_TYPE
+import com.maxxos.store.util.CertUtil.GOOGLE_PLAY_CERT
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

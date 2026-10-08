@@ -15,7 +15,7 @@
  * SPDX-FileCopyrightText: 2026 Aurora OSS
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package com.aurora.store.compose.ui.sheets
+package com.maxxos.store.compose.ui.sheets
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -44,8 +44,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.aurora.store.R
-import com.aurora.store.data.room.account.Account
+import com.maxxos.store.R
+import com.maxxos.store.data.room.account.Account
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

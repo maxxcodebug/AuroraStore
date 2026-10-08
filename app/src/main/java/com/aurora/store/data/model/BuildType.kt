@@ -16,17 +16,17 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
-import com.aurora.store.BuildConfig
+import com.maxxos.store.BuildConfig
 
 /**
  * Class representing build types for Aurora Store
  */
 enum class BuildType(val packageName: String) {
-    RELEASE("com.aurora.store"),
-    NIGHTLY("com.aurora.store.nightly"),
-    DEBUG("com.aurora.store.debug");
+    RELEASE("com.maxxos.store"),
+    NIGHTLY("com.maxxos.store.nightly"),
+    DEBUG("com.maxxos.store.debug");
 
     companion object {
 

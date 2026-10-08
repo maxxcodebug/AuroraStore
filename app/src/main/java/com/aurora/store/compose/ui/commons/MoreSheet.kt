@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -52,9 +52,9 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.viewmodel.commons.MoreViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.viewmodel.commons.MoreViewModel
 
 private data class MoreItem(
     @StringRes val titleRes: Int,

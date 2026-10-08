@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.search
+package com.maxxos.store.compose.ui.search
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
@@ -81,18 +81,18 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.aurora.extensions.emptyPagingItems
 import com.aurora.gplayapi.SearchSuggestEntry
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.SearchSuggestionListItem
-import com.aurora.store.compose.composable.app.LargeAppListItem
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.details.AppDetailsScreen
-import com.aurora.store.data.model.SearchFilter
-import com.aurora.store.viewmodel.search.SearchViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.SearchSuggestionListItem
+import com.maxxos.store.compose.composable.app.LargeAppListItem
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.details.AppDetailsScreen
+import com.maxxos.store.data.model.SearchFilter
+import com.maxxos.store.viewmodel.search.SearchViewModel
 import kotlin.random.Random
 import kotlin.uuid.Uuid
 import kotlinx.coroutines.flow.MutableStateFlow

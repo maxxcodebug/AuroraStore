@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,13 +33,13 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.composable.app.LargeAppListItem
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.viewmodel.browse.ExpandedStreamBrowseViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.composable.app.LargeAppListItem
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.viewmodel.browse.ExpandedStreamBrowseViewModel
 import kotlin.uuid.Uuid
 
 @Composable

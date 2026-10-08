@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.navigation
+package com.maxxos.store.compose.navigation
 
 import com.aurora.gplayapi.data.models.Category
 import com.aurora.gplayapi.data.models.StreamCluster
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.data.room.update.Update
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.data.room.update.Update
 
 /**
  * All navigation actions available to composable screens.

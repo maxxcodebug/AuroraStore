@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.menu
+package com.maxxos.store.compose.ui.details.menu
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.DropdownMenu
@@ -37,11 +37,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import com.aurora.Constants
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.AppState
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.AppState
+import com.maxxos.store.util.PackageUtil
 
 /**
  * Menu for the app details screen

@@ -16,33 +16,33 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room
+package com.maxxos.store.data.room
 
 import android.content.Context
 import androidx.room.Room
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_10_11
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_11_12
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_12_13
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_1_2
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_2_3
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_3_4
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_4_5
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_5_6
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_6_7
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_7_8
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_8_9
-import com.aurora.store.data.room.MigrationHelper.MIGRATION_9_10
-import com.aurora.store.data.room.account.AccountConverter
-import com.aurora.store.data.room.account.AccountDao
-import com.aurora.store.data.room.account.AppAccountBindingDao
-import com.aurora.store.data.room.download.DownloadConverter
-import com.aurora.store.data.room.download.DownloadDao
-import com.aurora.store.data.room.exodus.TrackerDao
-import com.aurora.store.data.room.favourite.FavouriteDao
-import com.aurora.store.data.room.notification.NotificationDao
-import com.aurora.store.data.room.review.ReviewDao
-import com.aurora.store.data.room.update.IgnoredUpdateDao
-import com.aurora.store.data.room.update.UpdateDao
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_10_11
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_11_12
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_12_13
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_1_2
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_2_3
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_3_4
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_4_5
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_5_6
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_6_7
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_7_8
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_8_9
+import com.maxxos.store.data.room.MigrationHelper.MIGRATION_9_10
+import com.maxxos.store.data.room.account.AccountConverter
+import com.maxxos.store.data.room.account.AccountDao
+import com.maxxos.store.data.room.account.AppAccountBindingDao
+import com.maxxos.store.data.room.download.DownloadConverter
+import com.maxxos.store.data.room.download.DownloadDao
+import com.maxxos.store.data.room.exodus.TrackerDao
+import com.maxxos.store.data.room.favourite.FavouriteDao
+import com.maxxos.store.data.room.notification.NotificationDao
+import com.maxxos.store.data.room.review.ReviewDao
+import com.maxxos.store.data.room.update.IgnoredUpdateDao
+import com.maxxos.store.data.room.update.UpdateDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

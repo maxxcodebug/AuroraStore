@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.app
+package com.maxxos.store.compose.composable.app
 
 import androidx.compose.ui.semantics.ProgressBarRangeInfo
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsNotDisplayed
 import androidx.compose.ui.test.assertRangeInfoEquals
 import androidx.compose.ui.test.onNodeWithTag
-import com.aurora.store.IsolatedTest
+import com.maxxos.store.IsolatedTest
 import org.junit.Test
 
 class AnimatedAppIconTest : IsolatedTest() {

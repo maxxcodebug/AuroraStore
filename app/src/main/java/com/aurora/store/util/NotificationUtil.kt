@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -33,18 +33,18 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.PendingIntentCompat
 import androidx.core.content.getSystemService
 import com.aurora.Constants
-import com.aurora.store.ComposeActivity
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Screen
-import com.aurora.store.data.activity.InstallActivity
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.receiver.DownloadCancelReceiver
-import com.aurora.store.data.receiver.DownloadRetryReceiver
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.download.Download as AuroraDownload
-import com.aurora.store.data.room.update.Update
+import com.maxxos.store.ComposeActivity
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Screen
+import com.maxxos.store.data.activity.InstallActivity
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.receiver.DownloadCancelReceiver
+import com.maxxos.store.data.receiver.DownloadRetryReceiver
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.download.Download as AuroraDownload
+import com.maxxos.store.data.room.update.Update
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 import kotlin.math.absoluteValue
@@ -52,13 +52,13 @@ import kotlin.math.absoluteValue
 object NotificationUtil {
 
     // Channel groups: headings the individual channels are filed under in system settings.
-    private const val GROUP_CHANNELS_ACTIVITY = "com.aurora.store.channels.ACTIVITY"
-    private const val GROUP_CHANNELS_ALERTS = "com.aurora.store.channels.ALERTS"
+    private const val GROUP_CHANNELS_ACTIVITY = "com.maxxos.store.channels.ACTIVITY"
+    private const val GROUP_CHANNELS_ALERTS = "com.maxxos.store.channels.ALERTS"
 
     // Terminal install/failure notifications are bundled under a group so a bulk update
     // shows a single collapsible summary instead of one notification per app.
-    private const val GROUP_INSTALLED = "com.aurora.store.INSTALLED"
-    private const val GROUP_FAILED = "com.aurora.store.FAILED"
+    private const val GROUP_INSTALLED = "com.maxxos.store.INSTALLED"
+    private const val GROUP_FAILED = "com.maxxos.store.FAILED"
 
     // Fixed IDs for the two group summaries. Kept well clear of the per-app IDs
     // (packageName.hashCode()) and the worker IDs (100/200/500/501).

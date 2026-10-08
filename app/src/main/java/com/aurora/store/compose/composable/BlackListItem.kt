@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -35,9 +35,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 @Composable
 fun BlackListItem(

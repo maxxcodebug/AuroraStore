@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.account
+package com.maxxos.store.data.room.account
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import com.aurora.store.data.model.AccountType
+import com.maxxos.store.data.model.AccountType
 import kotlinx.coroutines.flow.Flow
 
 @Dao

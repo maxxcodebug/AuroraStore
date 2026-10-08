@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.accounts
+package com.maxxos.store.compose.ui.accounts
 
 import android.os.Build
 import android.webkit.CookieManager
@@ -42,14 +42,14 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.model.AuthState
-import com.aurora.store.util.AC2DMUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.viewmodel.auth.AuthViewModel
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.model.AuthState
+import com.maxxos.store.util.AC2DMUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.viewmodel.auth.AuthViewModel
 
 private const val EMBEDDED_SETUP_URL = "https://accounts.google.com/EmbeddedSetup"
 private const val AUTH_TOKEN = "oauth_token"

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,8 +28,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Confirmation dialog for bulk-installing all favourite apps.

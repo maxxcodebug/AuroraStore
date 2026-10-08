@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.activity
+package com.maxxos.store.data.activity
 
 import android.content.pm.PackageInstaller.SessionCallback
 import android.os.Bundle
@@ -26,8 +26,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.IntentCompat
 import com.aurora.Constants
 import com.aurora.extensions.TAG
-import com.aurora.store.data.installer.SessionInstaller
-import com.aurora.store.data.room.download.Download
+import com.maxxos.store.data.installer.SessionInstaller
+import com.maxxos.store.data.room.download.Download
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

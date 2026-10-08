@@ -17,16 +17,16 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.paging
+package com.maxxos.store.data.paging
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
 import androidx.paging.PagingSource.LoadResult.Page.Companion.COUNT_UNDEFINED
 import androidx.paging.PagingState
-import com.aurora.store.data.PageResult
-import com.aurora.store.data.paging.GenericPagingSource.Companion.manualPager
-import com.aurora.store.data.paging.GenericPagingSource.Companion.pager
+import com.maxxos.store.data.PageResult
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.manualPager
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.pager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

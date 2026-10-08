@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.content.Context
 import android.util.Log
-import com.aurora.store.R
-import com.aurora.store.data.model.ProxyInfo
+import com.maxxos.store.R
+import com.maxxos.store.data.model.ProxyInfo
 import java.util.Locale
 import kotlin.math.ln
 import kotlin.math.pow

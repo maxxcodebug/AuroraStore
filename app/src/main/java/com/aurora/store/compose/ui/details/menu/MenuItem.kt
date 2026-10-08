@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.menu
+package com.maxxos.store.compose.ui.details.menu
 
 /**
  * Valid menu items for app details screen for handling clicks

@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.composable
+package com.maxxos.store.compose.ui.details.composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,12 +52,12 @@ import com.aurora.extensions.isWindowCompact
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.Rating
 import com.aurora.gplayapi.data.models.Review
-import com.aurora.store.R
-import com.aurora.store.compose.composable.SectionHeader
-import com.aurora.store.compose.composable.details.RatingListItem
-import com.aurora.store.compose.composable.details.ReviewListItem
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.SectionHeader
+import com.maxxos.store.compose.composable.details.RatingListItem
+import com.maxxos.store.compose.composable.details.ReviewListItem
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Composable to display reviews of the app, supposed to be used as a part

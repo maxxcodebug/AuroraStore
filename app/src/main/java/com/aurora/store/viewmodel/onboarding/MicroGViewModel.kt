@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.onboarding
+package com.maxxos.store.viewmodel.onboarding
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -27,17 +27,17 @@ import androidx.lifecycle.viewModelScope
 import com.aurora.Constants.PACKAGE_NAME_GMS
 import com.aurora.Constants.PACKAGE_NAME_PLAY_STORE
 import com.aurora.gplayapi.data.models.PlayFile
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.model.ExternalItem
-import com.aurora.store.data.model.InstallStatus
-import com.aurora.store.data.model.NetworkStatus
-import com.aurora.store.data.providers.NetworkProvider
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.suite.ExternalApk
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.model.ExternalItem
+import com.maxxos.store.data.model.InstallStatus
+import com.maxxos.store.data.model.NetworkStatus
+import com.maxxos.store.data.providers.NetworkProvider
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.suite.ExternalApk
+import com.maxxos.store.util.PackageUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

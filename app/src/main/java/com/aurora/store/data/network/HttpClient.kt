@@ -16,15 +16,15 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.network
+package com.maxxos.store.data.network
 
 import android.util.Log
 import com.aurora.extensions.TAG
 import com.aurora.gplayapi.data.models.PlayResponse
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.BuildConfig.APPLICATION_ID
-import com.aurora.store.BuildConfig.VERSION_CODE
-import com.aurora.store.BuildConfig.VERSION_NAME
+import com.maxxos.store.BuildConfig.APPLICATION_ID
+import com.maxxos.store.BuildConfig.VERSION_CODE
+import com.maxxos.store.BuildConfig.VERSION_NAME
 import java.io.IOException
 import javax.inject.Inject
 import javax.inject.Singleton

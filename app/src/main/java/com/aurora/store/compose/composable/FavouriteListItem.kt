@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.layout.Arrangement
@@ -47,18 +47,18 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.compose.composable.app.AnimatedAppIcon
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.theme.colorGreen
-import com.aurora.store.compose.theme.colorRed
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.favourite.Favourite
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.app.AnimatedAppIcon
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.theme.colorGreen
+import com.maxxos.store.compose.theme.colorRed
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.favourite.Favourite
+import com.maxxos.store.util.PackageUtil
 import kotlinx.coroutines.flow.filter
 
 @Composable

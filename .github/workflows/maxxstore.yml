@@ -1,38 +1,29 @@
-# Copyright (C) 2026 MaxxOS. All rights reserved.
-#
-# Builds Maxx Store and publishes the APK as a GitHub Pre-release.
-
 name: Build Maxx Store APK
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - staging
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   build:
-    name: Build Maxx Store APK
+    name: Build Maxx Store
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Set up JDK 21
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
-
-      # Ubuntu GitHub runners already contain Android SDK.
-      # Do NOT use android-actions/setup-android here because
-      # it attempts to install the obsolete "tools" package.
+          java-version: '21'
+          cache: gradle
 
       - name: Configure Android SDK
         shell: bash
@@ -45,87 +36,66 @@ jobs:
           echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> "$GITHUB_ENV"
 
-          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" \
+            -type f \
+            -name sdkmanager \
+            -perm -111 \
+            | head -n 1)"
 
           if [ -z "$SDKMANAGER" ]; then
             echo "::error::sdkmanager not found"
-            find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -print || true
+            find "$ANDROID_HOME/cmdline-tools" -maxdepth 3 -type f -name sdkmanager || true
             exit 1
           fi
 
-          echo "Using sdkmanager:"
-          echo "$SDKMANAGER"
-          "$SDKMANAGER" --version
-
-      - name: Accept Android SDK licenses
-        shell: bash
-        run: |
-          set -e
-
-          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
+          echo "Using sdkmanager: $SDKMANAGER"
 
           yes | "$SDKMANAGER" \
             --sdk_root="$ANDROID_HOME" \
-            --licenses > /dev/null || true
-
-      - name: Install Android SDK packages
-        shell: bash
-        run: |
-          set -e
-
-          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -perm -111 | head -n 1)"
-
-          echo "Installing Android SDK packages..."
+            --licenses || true
 
           "$SDKMANAGER" \
             --sdk_root="$ANDROID_HOME" \
+            --channel=3 \
             "platform-tools" \
             "platforms;android-37.0" \
             "build-tools;37.0.0"
 
-      - name: Create Android 37 compatibility link
-        shell: bash
-        run: |
-          set -e
-
           if [ -d "$ANDROID_HOME/platforms/android-37.0" ]; then
             rm -rf "$ANDROID_HOME/platforms/android-37"
-            ln -s "$ANDROID_HOME/platforms/android-37.0"               "$ANDROID_HOME/platforms/android-37"
-
-            echo "Created:"
-            ls -la "$ANDROID_HOME/platforms/android-37"
-          else
-            echo "::error::Android 37.0 platform was not installed."
-            ls -la "$ANDROID_HOME/platforms" || true
-            exit 1
+            ln -s \
+              "$ANDROID_HOME/platforms/android-37.0" \
+              "$ANDROID_HOME/platforms/android-37"
           fi
 
-      - name: Verify Android SDK
-        shell: bash
+          echo "Installed SDK:"
+          ls -la "$ANDROID_HOME/platforms/"
+          ls -la "$ANDROID_HOME/build-tools/"
+
+      - name: Verify MaxxOS namespace
         run: |
-          set -e
-
-          echo "Android SDK:"
-          echo "$ANDROID_HOME"
+          echo "=== APP CONFIG ==="
+          grep -nE 'namespace|applicationId' app/build.gradle.kts
 
           echo
-          echo "Platforms:"
-          ls -la "$ANDROID_HOME/platforms"
+          echo "=== REMAINING AURORA PACKAGE REFERENCES ==="
+          if grep -RIn \
+            --include='*.kt' \
+            --include='*.java' \
+            --include='*.kts' \
+            --include='*.xml' \
+            'com\.aurora\.store' \
+            app/src; then
+            echo "::warning::Aurora package references still exist"
+          else
+            echo "No com.aurora.store references found."
+          fi
 
-          echo
-          echo "Build tools:"
-          ls -la "$ANDROID_HOME/build-tools"
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
 
-          echo
-          echo "ADB:"
-          "$ANDROID_HOME/platform-tools/adb" version
-
-      - name: Set up Gradle
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-
-      - name: Prepare Gradle
-        run: |
-          chmod +x ./gradlew
 
       - name: Build Maxx Store
         run: |
@@ -133,69 +103,40 @@ jobs:
             --stacktrace \
             --no-daemon
 
-      - name: Prepare APK
+      - name: Locate APK
+        id: apk
         shell: bash
         run: |
           set -e
 
           mkdir -p release
 
-          echo "Searching for APK..."
-
-          find . \
+          APK="$(find app/build/outputs/apk \
             -type f \
-            -path "*/build/outputs/apk/*.apk" \
-            -print
-
-          APK=$(find . \
-            -type f \
-            -path "*/build/outputs/apk/*.apk" \
-            | head -n 1)
+            -name '*.apk' \
+            | head -n 1)"
 
           if [ -z "$APK" ]; then
-            echo "::error::Maxx Store APK was not found."
+            echo "::error::No APK generated"
+            find app/build/outputs -type f || true
             exit 1
           fi
 
-          echo "Found APK:"
-          echo "$APK"
+          echo "APK: $APK"
 
           cp "$APK" release/MaxxStore-debug.apk
 
-          echo
-          echo "Final APK:"
           ls -lh release/MaxxStore-debug.apk
 
-      - name: Generate release tag
-        id: release
-        run: |
-          TAG="maxxstore-${{ github.run_number }}"
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          echo "Release tag: $TAG"
-
-      - name: Publish Pre-release
+      - name: Create prerelease
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create \
-            "${{ steps.release.outputs.tag }}" \
+          TAG="maxxstore-${{ github.run_number }}"
+
+          gh release create "$TAG" \
             release/MaxxStore-debug.apk \
             --repo "${{ github.repository }}" \
             --prerelease \
-            --title "Maxx Store ${{ steps.release.outputs.tag }}" \
+            --title "Maxx Store $TAG" \
             --generate-notes
-
-      - name: Build Summary
-        run: |
-          {
-            echo "## Maxx Store"
-            echo
-            echo "### Build successful"
-            echo
-            echo "- Branch: \`${{ github.ref_name }}\`"
-            echo "- Build: \`${{ github.run_number }}\`"
-            echo "- Variant: \`vanillaDebug\`"
-            echo "- Package: \`com.maxxos.store\`"
-            echo "- Release: GitHub Pre-release"
-            echo "- APK: \`MaxxStore-debug.apk\`"
-          } >> "$GITHUB_STEP_SUMMARY"

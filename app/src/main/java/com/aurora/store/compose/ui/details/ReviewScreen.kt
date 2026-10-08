@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details
+package com.maxxos.store.compose.ui.details
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -60,16 +60,16 @@ import com.aurora.extensions.adaptiveNavigationIcon
 import com.aurora.extensions.emptyPagingItems
 import com.aurora.extensions.isWindowCompact
 import com.aurora.gplayapi.data.models.Review
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.composable.details.ReviewListItem
-import com.aurora.store.compose.preview.ReviewPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.viewmodel.details.AppDetailsViewModel
-import com.aurora.store.viewmodel.details.ReviewViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.composable.details.ReviewListItem
+import com.maxxos.store.compose.preview.ReviewPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.viewmodel.details.AppDetailsViewModel
+import com.maxxos.store.viewmodel.details.ReviewViewModel
 import kotlin.random.Random
 import kotlinx.coroutines.flow.MutableStateFlow
 

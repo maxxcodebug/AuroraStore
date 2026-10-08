@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.apps
+package com.maxxos.store.compose.ui.apps
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
@@ -37,12 +37,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aurora.gplayapi.helpers.contracts.StreamContract
 import com.aurora.gplayapi.helpers.contracts.TopChartsContract
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.util.Preferences
-import com.aurora.store.viewmodel.category.CategoryViewModel
-import com.aurora.store.viewmodel.homestream.StreamViewModel
-import com.aurora.store.viewmodel.topchart.TopChartViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.viewmodel.category.CategoryViewModel
+import com.maxxos.store.viewmodel.homestream.StreamViewModel
+import com.maxxos.store.viewmodel.topchart.TopChartViewModel
 import kotlinx.coroutines.launch
 
 internal fun category(pageType: Int): StreamContract.Category =

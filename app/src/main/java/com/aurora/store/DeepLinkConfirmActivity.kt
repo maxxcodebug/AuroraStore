@@ -16,17 +16,17 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store
+package com.maxxos.store
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.fragment.app.FragmentActivity
-import com.aurora.store.compose.navigation.Screen
-import com.aurora.store.compose.theme.AuroraTheme
-import com.aurora.store.compose.ui.sheets.DeepLinkConfirmSheet
-import com.aurora.store.util.Preferences
+import com.maxxos.store.compose.navigation.Screen
+import com.maxxos.store.compose.theme.AuroraTheme
+import com.maxxos.store.compose.ui.sheets.DeepLinkConfirmSheet
+import com.maxxos.store.util.Preferences
 
 /**
  * Translucent trampoline that gates external [Intent.ACTION_VIEW] app/developer listing deep links

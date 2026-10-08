@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -33,13 +33,13 @@ import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.extensions.adaptiveNavigationIcon
-import com.aurora.store.R
-import com.aurora.store.compose.composable.PermissionList
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.Permission
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.viewmodel.commons.PermissionRationaleViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.PermissionList
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.Permission
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.viewmodel.commons.PermissionRationaleViewModel
 import kotlin.random.Random
 
 /**

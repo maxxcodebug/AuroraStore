@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer
+package com.maxxos.store.data.installer
 
 import android.content.ComponentName
 import android.content.Context
@@ -32,15 +32,15 @@ import android.util.Log
 import com.aurora.extensions.TAG
 import com.aurora.services.IPrivilegedCallback
 import com.aurora.services.IPrivilegedService
-import com.aurora.store.AuroraApp
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.installer.base.InstallerBase
-import com.aurora.store.data.model.Installer
-import com.aurora.store.data.model.InstallerInfo
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.installer.base.InstallerBase
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.data.model.InstallerInfo
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.util.PackageUtil
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor

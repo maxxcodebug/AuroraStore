@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.helper
+package com.maxxos.store.data.helper
 
 import android.content.Context
 import android.util.Log
@@ -32,23 +32,23 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import com.aurora.extensions.TAG
-import com.aurora.store.AuroraApp
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.event.BusEvent
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.model.BuildType
-import com.aurora.store.data.model.UpdateMode
-import com.aurora.store.data.room.update.IgnoredUpdate
-import com.aurora.store.data.room.update.IgnoredUpdateDao
-import com.aurora.store.data.room.update.UpdateDao
-import com.aurora.store.data.room.update.isIgnoredBy
-import com.aurora.store.data.work.UpdateWorker
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_BATTERY
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_IDLE
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_METERED
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.event.BusEvent
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.model.BuildType
+import com.maxxos.store.data.model.UpdateMode
+import com.maxxos.store.data.room.update.IgnoredUpdate
+import com.maxxos.store.data.room.update.IgnoredUpdateDao
+import com.maxxos.store.data.room.update.UpdateDao
+import com.maxxos.store.data.room.update.isIgnoredBy
+import com.maxxos.store.data.work.UpdateWorker
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_BATTERY
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_IDLE
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_METERED
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.UUID
 import java.util.concurrent.TimeUnit.HOURS

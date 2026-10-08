@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.blacklist.menu
+package com.maxxos.store.compose.ui.blacklist.menu
 
 /**
  * Valid menu items for the purpose of handling clicks

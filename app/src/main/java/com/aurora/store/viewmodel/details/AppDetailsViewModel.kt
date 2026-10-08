@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.details
+package com.maxxos.store.viewmodel.details
 
 import android.content.Context
 import android.util.Log
@@ -38,30 +38,30 @@ import com.aurora.gplayapi.helpers.AppDetailsHelper
 import com.aurora.gplayapi.helpers.ReviewsHelper
 import com.aurora.gplayapi.helpers.web.WebDataSafetyHelper
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.AccountRepository
-import com.aurora.store.data.ExodusRepository
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.model.AppState
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.model.PlexusReport
-import com.aurora.store.data.model.Report
-import com.aurora.store.data.model.Scores
-import com.aurora.store.data.model.StorageRequirement
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.favourite.Favourite
-import com.aurora.store.data.room.favourite.FavouriteDao
-import com.aurora.store.data.room.review.LocalReview
-import com.aurora.store.data.room.review.LocalReview.Companion.toReview
-import com.aurora.store.data.room.review.ReviewDao
-import com.aurora.store.util.CertUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
-import com.aurora.store.util.StorageUtil
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.AccountRepository
+import com.maxxos.store.data.ExodusRepository
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.model.AppState
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.model.PlexusReport
+import com.maxxos.store.data.model.Report
+import com.maxxos.store.data.model.Scores
+import com.maxxos.store.data.model.StorageRequirement
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.favourite.Favourite
+import com.maxxos.store.data.room.favourite.FavouriteDao
+import com.maxxos.store.data.room.review.LocalReview
+import com.maxxos.store.data.room.review.LocalReview.Companion.toReview
+import com.maxxos.store.data.room.review.ReviewDao
+import com.maxxos.store.util.CertUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
+import com.maxxos.store.util.StorageUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences.updates
+package com.maxxos.store.compose.ui.preferences.updates
 
 import android.Manifest
 import android.content.Intent
@@ -62,27 +62,27 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.aurora.extensions.isIgnoringBatteryOptimizations
 import com.aurora.extensions.isTAndAbove
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.preferences.network.SingleChoiceDialog
-import com.aurora.store.data.model.UpdateMode
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_BATTERY
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_IDLE
-import com.aurora.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_METERED
-import com.aurora.store.util.Preferences.PREFERENCE_FILTER_AURORA_ONLY
-import com.aurora.store.util.Preferences.PREFERENCE_FILTER_FDROID
-import com.aurora.store.util.Preferences.PREFERENCE_FILTER_INSTALLERS
-import com.aurora.store.util.Preferences.PREFERENCE_SELF_UPDATE_ENABLED
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_AUTO
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_WARN_TRACKERS
-import com.aurora.store.util.save
-import com.aurora.store.viewmodel.all.UpdatesViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.preferences.network.SingleChoiceDialog
+import com.maxxos.store.data.model.UpdateMode
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_BATTERY
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_IDLE
+import com.maxxos.store.util.Preferences.PREFERENCES_UPDATES_RESTRICTIONS_METERED
+import com.maxxos.store.util.Preferences.PREFERENCE_FILTER_AURORA_ONLY
+import com.maxxos.store.util.Preferences.PREFERENCE_FILTER_FDROID
+import com.maxxos.store.util.Preferences.PREFERENCE_FILTER_INSTALLERS
+import com.maxxos.store.util.Preferences.PREFERENCE_SELF_UPDATE_ENABLED
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_AUTO
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_WARN_TRACKERS
+import com.maxxos.store.util.save
+import com.maxxos.store.viewmodel.all.UpdatesViewModel
 import kotlin.math.abs
 
 @Composable

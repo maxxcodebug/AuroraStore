@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.theme
+package com.maxxos.store.compose.theme
 
 import android.content.SharedPreferences
 import android.os.Build
@@ -37,7 +37,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.aurora.store.util.Preferences
+import com.maxxos.store.util.Preferences
 
 /**
  * App theme for Aurora Store based on [MaterialExpressiveTheme]

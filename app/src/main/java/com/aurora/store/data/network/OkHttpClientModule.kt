@@ -16,17 +16,17 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.network
+package com.maxxos.store.data.network
 
 import android.content.Context
 import android.util.Base64
 import android.util.Log
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.model.Algorithm
-import com.aurora.store.data.model.ProxyInfo
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_PROXY_INFO
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.model.Algorithm
+import com.maxxos.store.data.model.ProxyInfo
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_PROXY_INFO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

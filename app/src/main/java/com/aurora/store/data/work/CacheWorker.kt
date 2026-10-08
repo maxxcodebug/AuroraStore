@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.work
+package com.maxxos.store.data.work
 
 import android.content.Context
 import android.util.Log
@@ -26,9 +26,9 @@ import androidx.work.ExistingPeriodicWorkPolicy.KEEP
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.DownloadDao
-import com.aurora.store.util.PathUtil
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.DownloadDao
+import com.maxxos.store.util.PathUtil
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.io.File

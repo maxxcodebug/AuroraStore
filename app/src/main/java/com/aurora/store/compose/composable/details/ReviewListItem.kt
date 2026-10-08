@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.details
+package com.maxxos.store.compose.composable.details
 
 import android.text.format.DateUtils
 import android.widget.RatingBar
@@ -43,9 +43,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.aurora.gplayapi.data.models.Review
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ReviewPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ReviewPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Composable for viewing a review about an app

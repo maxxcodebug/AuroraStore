@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data
+package com.maxxos.store.data
 
 import android.content.Context
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_APP_LOCK_ENABLED
-import com.aurora.store.util.Preferences.PREFERENCE_APP_LOCK_TIMEOUT
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_APP_LOCK_ENABLED
+import com.maxxos.store.util.Preferences.PREFERENCE_APP_LOCK_TIMEOUT
 import javax.inject.Inject
 import javax.inject.Singleton
 

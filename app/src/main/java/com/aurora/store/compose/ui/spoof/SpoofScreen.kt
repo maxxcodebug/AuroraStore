@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.spoof
+package com.maxxos.store.compose.ui.spoof
 
 import android.net.Uri
 import android.os.Build
@@ -47,13 +47,13 @@ import androidx.compose.ui.util.fastForEachIndexed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aurora.Constants
 import com.aurora.extensions.toast
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.ui.spoof.menu.MenuItem
-import com.aurora.store.compose.ui.spoof.menu.SpoofMenu
-import com.aurora.store.compose.ui.spoof.navigation.SpoofPage
-import com.aurora.store.viewmodel.spoof.SpoofViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.ui.spoof.menu.MenuItem
+import com.maxxos.store.compose.ui.spoof.menu.SpoofMenu
+import com.maxxos.store.compose.ui.spoof.navigation.SpoofPage
+import com.maxxos.store.viewmodel.spoof.SpoofViewModel
 import kotlinx.coroutines.launch
 
 @Composable

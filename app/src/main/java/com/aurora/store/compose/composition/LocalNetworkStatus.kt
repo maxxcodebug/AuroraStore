@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composition
+package com.maxxos.store.compose.composition
 
 import androidx.compose.runtime.compositionLocalOf
-import com.aurora.store.data.model.NetworkStatus
+import com.maxxos.store.data.model.NetworkStatus
 
 /**
  * CompositionLocal carrying the current device network status. Provided once at the
- * activity root from a single [com.aurora.store.data.providers.NetworkProvider] subscription,
+ * activity root from a single [com.maxxos.store.data.providers.NetworkProvider] subscription,
  * so any screen can read `LocalNetworkStatus.current` without injecting the provider
  * or duplicating the flow collection.
  *

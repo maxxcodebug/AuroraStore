@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.favourite.menu
+package com.maxxos.store.compose.ui.favourite.menu
 
 /**
  * Valid menu items for the purpose of handling clicks

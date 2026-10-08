@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.spoof
+package com.maxxos.store.compose.ui.spoof
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,11 +33,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.aurora.store.R
-import com.aurora.store.compose.composable.DeviceListItem
-import com.aurora.store.compose.composable.TextDividerComposable
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.viewmodel.spoof.SpoofViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.DeviceListItem
+import com.maxxos.store.compose.composable.TextDividerComposable
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.viewmodel.spoof.SpoofViewModel
 import java.util.Properties
 import kotlin.random.Random
 

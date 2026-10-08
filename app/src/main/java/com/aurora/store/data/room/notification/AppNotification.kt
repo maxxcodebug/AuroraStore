@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.notification
+package com.maxxos.store.data.room.notification
 
 import android.os.Parcelable
 import androidx.room.Entity

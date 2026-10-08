@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
 import com.aurora.gplayapi.data.models.App
 

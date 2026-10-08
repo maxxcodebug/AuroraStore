@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
 import android.graphics.Bitmap
-import com.aurora.store.compose.ui.commons.InstalledAppMeta
+import com.maxxos.store.compose.ui.commons.InstalledAppMeta
 
 data class BlacklistAppItem(
     override val packageName: String,

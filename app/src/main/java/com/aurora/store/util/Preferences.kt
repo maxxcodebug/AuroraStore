@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -24,7 +24,7 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.aurora.extensions.isOneUI
-import com.aurora.store.BuildConfig
+import com.maxxos.store.BuildConfig
 
 object Preferences {
 

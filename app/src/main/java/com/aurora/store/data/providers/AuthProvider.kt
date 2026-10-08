@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.app.Activity
 import android.content.Context
@@ -27,15 +27,15 @@ import com.aurora.gplayapi.data.models.AuthData
 import com.aurora.gplayapi.data.models.PlayResponse
 import com.aurora.gplayapi.helpers.AuthHelper
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.data.AccountRepository
-import com.aurora.store.data.model.AccountType
-import com.aurora.store.data.model.Auth
-import com.aurora.store.data.room.account.Account
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTH_DATA
-import com.aurora.store.util.Preferences.PREFERENCE_DISPENSER_URLS
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.data.AccountRepository
+import com.maxxos.store.data.model.AccountType
+import com.maxxos.store.data.model.Auth
+import com.maxxos.store.data.room.account.Account
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTH_DATA
+import com.maxxos.store.util.Preferences.PREFERENCE_DISPENSER_URLS
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

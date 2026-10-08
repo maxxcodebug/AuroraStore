@@ -16,13 +16,13 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
 import android.util.Log
 import com.aurora.extensions.TAG
-import com.aurora.store.BuildConfig
-import com.aurora.store.util.PathUtil
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.util.PathUtil
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream

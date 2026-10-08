@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.apps
+package com.maxxos.store.compose.ui.apps
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -27,10 +27,10 @@ import androidx.compose.ui.Modifier
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.helpers.contracts.StreamContract
-import com.aurora.store.HomeStash
-import com.aurora.store.compose.composable.StreamCarousel
-import com.aurora.store.data.model.ViewState
-import com.aurora.store.viewmodel.homestream.StreamViewModel
+import com.maxxos.store.HomeStash
+import com.maxxos.store.compose.composable.StreamCarousel
+import com.maxxos.store.data.model.ViewState
+import com.maxxos.store.viewmodel.homestream.StreamViewModel
 
 @Composable
 internal fun ForYouContent(

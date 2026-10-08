@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.app
+package com.maxxos.store.compose.composable.app
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -45,9 +45,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Composable to show icon for an app that can be animated to also show install progress

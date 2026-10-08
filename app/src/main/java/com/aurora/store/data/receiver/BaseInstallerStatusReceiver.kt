@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.receiver
+package com.maxxos.store.data.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -27,20 +27,20 @@ import android.util.Log
 import androidx.core.content.IntentCompat
 import com.aurora.extensions.TAG
 import com.aurora.extensions.runOnUiThread
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.installer.AppInstaller.Companion.ACTION_INSTALL_STATUS
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_DISPLAY_NAME
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_PACKAGE_NAME
-import com.aurora.store.data.installer.AppInstaller.Companion.EXTRA_VERSION_CODE
-import com.aurora.store.data.installer.base.InstallerBase
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.DownloadDao
-import com.aurora.store.util.NotificationUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.PathUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTO_DELETE
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.installer.AppInstaller.Companion.ACTION_INSTALL_STATUS
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_DISPLAY_NAME
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_PACKAGE_NAME
+import com.maxxos.store.data.installer.AppInstaller.Companion.EXTRA_VERSION_CODE
+import com.maxxos.store.data.installer.base.InstallerBase
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.DownloadDao
+import com.maxxos.store.util.NotificationUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.PathUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTO_DELETE
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors

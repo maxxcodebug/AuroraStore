@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer.base
+package com.maxxos.store.data.installer.base
 
 import android.content.Context
 import android.content.pm.PackageInstaller
@@ -24,15 +24,15 @@ import android.net.Uri
 import android.util.Log
 import androidx.core.content.FileProvider
 import com.aurora.extensions.TAG
-import com.aurora.store.AuroraApp
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.util.NotificationUtil
-import com.aurora.store.util.PathUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTO_DELETE
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.util.NotificationUtil
+import com.maxxos.store.util.PathUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTO_DELETE
 import java.io.File
 
 abstract class InstallerBase(private val context: Context) : IInstaller {

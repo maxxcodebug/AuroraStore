@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.receiver
+package com.maxxos.store.data.receiver
 
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
@@ -28,10 +28,10 @@ import androidx.core.content.getSystemService
 import com.aurora.extensions.TAG
 import com.aurora.extensions.isVAndAbove
 import com.aurora.gplayapi.helpers.AppDetailsHelper
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.providers.AccountProvider
-import com.aurora.store.util.NotificationUtil
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.providers.AccountProvider
+import com.maxxos.store.util.NotificationUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

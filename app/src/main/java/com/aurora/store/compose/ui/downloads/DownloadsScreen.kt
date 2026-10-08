@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.downloads
+package com.maxxos.store.compose.ui.downloads
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -55,23 +55,23 @@ import androidx.paging.compose.itemKey
 import com.aurora.extensions.emptyPagingItems
 import com.aurora.extensions.toast
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.DownloadListItem
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.commons.SortSheet
-import com.aurora.store.compose.ui.downloads.menu.DownloadsMenu
-import com.aurora.store.compose.ui.downloads.menu.MenuItem
-import com.aurora.store.compose.ui.sheets.DownloadActionsSheet
-import com.aurora.store.data.model.DownloadSortBy
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.viewmodel.downloads.DownloadsViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.DownloadListItem
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.commons.SortSheet
+import com.maxxos.store.compose.ui.downloads.menu.DownloadsMenu
+import com.maxxos.store.compose.ui.downloads.menu.MenuItem
+import com.maxxos.store.compose.ui.sheets.DownloadActionsSheet
+import com.maxxos.store.data.model.DownloadSortBy
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.viewmodel.downloads.DownloadsViewModel
 import kotlin.random.Random
 import kotlinx.coroutines.flow.MutableStateFlow
 

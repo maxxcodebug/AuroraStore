@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -46,13 +46,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.compose.ui.unit.dp
 import com.aurora.extensions.isQAndAbove
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 private const val TAG = "NetworkScreen"
 
 /**
- * Full-screen "no network" placeholder shown while [com.aurora.store.data.model.NetworkStatus]
+ * Full-screen "no network" placeholder shown while [com.maxxos.store.data.model.NetworkStatus]
  * is UNAVAILABLE. Replaces the legacy modal sheet. Auto-dismisses by virtue of its caller
  * only rendering it while offline.
  */

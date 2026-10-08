@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.download
+package com.maxxos.store.data.room.download
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
@@ -26,7 +26,7 @@ import androidx.room.Query
 import androidx.room.RawQuery
 import androidx.sqlite.db.SupportSQLiteQuery
 import com.aurora.gplayapi.data.models.PlayFile
-import com.aurora.store.data.model.DownloadStatus
+import com.maxxos.store.data.model.DownloadStatus
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.subcategory
+package com.maxxos.store.viewmodel.subcategory
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -28,7 +28,7 @@ import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.helpers.contracts.CategoryStreamContract
 import com.aurora.gplayapi.helpers.contracts.StreamContract
 import com.aurora.gplayapi.helpers.web.WebCategoryStreamHelper
-import com.aurora.store.data.model.ViewState
+import com.maxxos.store.data.model.ViewState
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

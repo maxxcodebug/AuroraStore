@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.receiver
+package com.maxxos.store.data.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context

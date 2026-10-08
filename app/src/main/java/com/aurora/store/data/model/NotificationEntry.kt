@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.room.notification.AppNotification
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.room.notification.AppNotification
 
 sealed class NotificationEntry {
 

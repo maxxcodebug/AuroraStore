@@ -16,15 +16,15 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.notifications
+package com.maxxos.store.viewmodel.notifications
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.model.NotificationEntry
-import com.aurora.store.data.room.notification.NotificationDao
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.model.NotificationEntry
+import com.maxxos.store.data.room.notification.NotificationDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

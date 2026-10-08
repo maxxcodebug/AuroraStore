@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data
+package com.maxxos.store.data
 
-import com.aurora.store.data.room.account.Account
-import com.aurora.store.data.room.account.AccountDao
-import com.aurora.store.data.room.account.AppAccountBinding
-import com.aurora.store.data.room.account.AppAccountBindingDao
+import com.maxxos.store.data.room.account.Account
+import com.maxxos.store.data.room.account.AccountDao
+import com.maxxos.store.data.room.account.AppAccountBinding
+import com.maxxos.store.data.room.account.AppAccountBindingDao
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.Flow

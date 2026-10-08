@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.all
+package com.maxxos.store.viewmodel.all
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
@@ -29,19 +29,19 @@ import androidx.paging.cachedIn
 import com.aurora.extensions.isValidApp
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.helpers.web.WebAppDetailsHelper
-import com.aurora.store.compose.ui.commons.InstalledAppMeta
-import com.aurora.store.compose.ui.commons.SortFilterPrefKeys
-import com.aurora.store.compose.ui.commons.SortFilterState
-import com.aurora.store.compose.ui.commons.applyFilter
-import com.aurora.store.compose.ui.commons.applySort
-import com.aurora.store.compose.ui.commons.loadSortFilterState
-import com.aurora.store.compose.ui.commons.save
-import com.aurora.store.data.PageResult
-import com.aurora.store.data.paging.GenericPagingSource
-import com.aurora.store.data.paging.GenericPagingSource.Companion.manualPager
-import com.aurora.store.data.providers.BlacklistProvider
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
+import com.maxxos.store.compose.ui.commons.InstalledAppMeta
+import com.maxxos.store.compose.ui.commons.SortFilterPrefKeys
+import com.maxxos.store.compose.ui.commons.SortFilterState
+import com.maxxos.store.compose.ui.commons.applyFilter
+import com.maxxos.store.compose.ui.commons.applySort
+import com.maxxos.store.compose.ui.commons.loadSortFilterState
+import com.maxxos.store.compose.ui.commons.save
+import com.maxxos.store.data.PageResult
+import com.maxxos.store.data.paging.GenericPagingSource
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.manualPager
+import com.maxxos.store.data.providers.BlacklistProvider
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.module
+package com.maxxos.store.module
 
 import com.aurora.gplayapi.helpers.AppDetailsHelper
 import com.aurora.gplayapi.helpers.CategoryHelper
@@ -31,8 +31,8 @@ import com.aurora.gplayapi.helpers.web.WebSearchHelper
 import com.aurora.gplayapi.helpers.web.WebStreamHelper
 import com.aurora.gplayapi.helpers.web.WebTopChartsHelper
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.SpoofProvider
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.SpoofProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer
+package com.maxxos.store.data.installer
 
 import android.content.Context
 import android.content.Intent
@@ -34,15 +34,15 @@ import com.aurora.extensions.isOAndAbove
 import com.aurora.extensions.isPAndAbove
 import com.aurora.extensions.isSAndAbove
 import com.aurora.extensions.toast
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.data.installer.base.IInstaller
-import com.aurora.store.data.model.Installer
-import com.aurora.store.data.model.InstallerInfo
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.PackageUtil.hasMicroGCompanion
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_INSTALLER_ID
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.data.installer.base.IInstaller
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.data.model.InstallerInfo
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.PackageUtil.hasMicroGCompanion
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_INSTALLER_ID
 import com.topjohnwu.superuser.Shell
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -65,14 +65,14 @@ class AppInstaller @Inject constructor(
 
     companion object {
         const val ACTION_INSTALL_STATUS =
-            "com.aurora.store.data.installer.AppInstaller.INSTALL_STATUS"
+            "com.maxxos.store.data.installer.AppInstaller.INSTALL_STATUS"
 
         const val EXTRA_PACKAGE_NAME =
-            "com.aurora.store.data.installer.AppInstaller.EXTRA_PACKAGE_NAME"
+            "com.maxxos.store.data.installer.AppInstaller.EXTRA_PACKAGE_NAME"
         const val EXTRA_VERSION_CODE =
-            "com.aurora.store.data.installer.AppInstaller.EXTRA_VERSION_CODE"
+            "com.maxxos.store.data.installer.AppInstaller.EXTRA_VERSION_CODE"
         const val EXTRA_DISPLAY_NAME =
-            "com.aurora.store.data.installer.AppInstaller.EXTRA_DISPLAY_NAME"
+            "com.maxxos.store.data.installer.AppInstaller.EXTRA_DISPLAY_NAME"
 
         fun getCurrentInstaller(context: Context): Installer =
             Installer.entries[Preferences.getInteger(context, PREFERENCE_INSTALLER_ID)]

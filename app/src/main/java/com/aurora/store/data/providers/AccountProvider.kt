@@ -16,14 +16,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
 import com.aurora.Constants
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.data.model.AccountType
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTH_DATA
+import com.maxxos.store.data.model.AccountType
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTH_DATA
 
 object AccountProvider {
 

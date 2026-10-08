@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.commons
+package com.maxxos.store.compose.ui.commons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,15 +39,15 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.aurora.extensions.emptyPagingItems
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamCluster
-import com.aurora.store.R
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.composable.app.LargeAppListItem
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.viewmodel.browse.StreamBrowseViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.composable.app.LargeAppListItem
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.viewmodel.browse.StreamBrowseViewModel
 import kotlin.random.Random
 import kotlin.uuid.Uuid
 import kotlinx.coroutines.flow.MutableStateFlow

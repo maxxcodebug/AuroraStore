@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.activity
+package com.maxxos.store.data.activity
 
 import android.app.Activity
 import android.content.Context
@@ -28,8 +28,8 @@ import androidx.core.content.FileProvider
 import androidx.core.content.IntentCompat
 import com.aurora.Constants.PACKAGE_NAME_PLAY_STORE
 import com.aurora.extensions.TAG
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.installer.MicroGInstaller.Companion.buildMicroGInstallIntent
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.installer.MicroGInstaller.Companion.buildMicroGInstallIntent
 import java.io.File
 
 class MicroGInstallerActivity : Activity() {

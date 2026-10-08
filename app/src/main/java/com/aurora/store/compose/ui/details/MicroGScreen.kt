@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details
+package com.maxxos.store.compose.ui.details
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
@@ -55,17 +55,17 @@ import com.aurora.extensions.adaptiveNavigationIcon
 import com.aurora.extensions.isWindowCompact
 import com.aurora.extensions.toast
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.composable.MicroG
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.data.providers.PermissionProvider
-import com.aurora.store.viewmodel.details.AppDetailsViewModel
-import com.aurora.store.viewmodel.onboarding.MicroGUIState
-import com.aurora.store.viewmodel.onboarding.MicroGViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.MicroG
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.data.providers.PermissionProvider
+import com.maxxos.store.viewmodel.details.AppDetailsViewModel
+import com.maxxos.store.viewmodel.onboarding.MicroGUIState
+import com.maxxos.store.viewmodel.onboarding.MicroGViewModel
 
 @Composable
 fun MicroGScreen(

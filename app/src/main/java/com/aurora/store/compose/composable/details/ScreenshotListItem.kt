@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.details
+package com.maxxos.store.compose.composable.details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
@@ -36,8 +36,8 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.aurora.extensions.shimmer
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
 
 /**
  * Composable to display a screenshot of an app

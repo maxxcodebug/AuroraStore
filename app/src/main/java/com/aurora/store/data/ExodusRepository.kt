@@ -16,22 +16,22 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data
+package com.maxxos.store.data
 
 import android.content.Context
 import android.util.Log
 import com.aurora.Constants
 import com.aurora.extensions.TAG
 import com.aurora.gplayapi.network.IHttpClient
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.model.ExodusReport
-import com.aurora.store.data.model.ExodusTracker
-import com.aurora.store.data.model.Report
-import com.aurora.store.data.model.TrackersResponse
-import com.aurora.store.data.room.exodus.TrackerDao
-import com.aurora.store.data.room.exodus.TrackerEntity
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_LAST_TRACKER_SYNC
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.model.ExodusReport
+import com.maxxos.store.data.model.ExodusTracker
+import com.maxxos.store.data.model.Report
+import com.maxxos.store.data.model.TrackersResponse
+import com.maxxos.store.data.room.exodus.TrackerDao
+import com.maxxos.store.data.room.exodus.TrackerEntity
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_LAST_TRACKER_SYNC
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject

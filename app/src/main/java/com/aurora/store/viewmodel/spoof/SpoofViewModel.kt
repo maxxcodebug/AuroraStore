@@ -16,17 +16,17 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.spoof
+package com.maxxos.store.viewmodel.spoof
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.aurora.extensions.TAG
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.NativeDeviceInfoProvider
-import com.aurora.store.data.providers.SpoofProvider
-import com.aurora.store.util.PathUtil
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.NativeDeviceInfoProvider
+import com.maxxos.store.data.providers.SpoofProvider
+import com.maxxos.store.util.PathUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Locale

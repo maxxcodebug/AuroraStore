@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.notifications
+package com.maxxos.store.compose.ui.notifications
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.layout.Arrangement
@@ -44,18 +44,18 @@ import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.composable.AuroraListItem
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.composable.app.AnimatedAppIcon
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.model.NotificationEntry
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.viewmodel.notifications.NotificationsViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.AuroraListItem
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.composable.app.AnimatedAppIcon
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.model.NotificationEntry
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.viewmodel.notifications.NotificationsViewModel
 
 @Composable
 fun NotificationsScreen(

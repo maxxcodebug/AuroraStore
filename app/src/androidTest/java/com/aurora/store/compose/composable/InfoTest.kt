@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.assertHasClickAction
@@ -24,8 +24,8 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.text.AnnotatedString
-import com.aurora.store.IsolatedTest
-import com.aurora.store.R
+import com.maxxos.store.IsolatedTest
+import com.maxxos.store.R
 import org.junit.Test
 
 class InfoTest : IsolatedTest() {

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.apps
+package com.maxxos.store.compose.ui.apps
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -51,15 +51,15 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.helpers.contracts.TopChartsContract
-import com.aurora.store.R
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ShimmerAppRow
-import com.aurora.store.compose.composable.app.LargeAppListItem
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.ViewState
-import com.aurora.store.data.model.ViewState.Loading.getDataAs
-import com.aurora.store.viewmodel.topchart.TopChartViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ShimmerAppRow
+import com.maxxos.store.compose.composable.app.LargeAppListItem
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.ViewState
+import com.maxxos.store.data.model.ViewState.Loading.getDataAs
+import com.maxxos.store.viewmodel.topchart.TopChartViewModel
 
 private const val LOAD_MORE_THRESHOLD = 2
 

@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Arrangement
@@ -50,14 +50,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.compose.ui.util.fastForEach
 import com.aurora.extensions.browse
-import com.aurora.store.R
-import com.aurora.store.compose.composable.app.AnimatedAppIcon
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.ExternalItem
-import com.aurora.store.data.model.InstallStatus
-import com.aurora.store.data.model.Link
-import com.aurora.store.util.CommonUtil.getETAString
-import com.aurora.store.viewmodel.onboarding.MicroGUIState
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.app.AnimatedAppIcon
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.ExternalItem
+import com.maxxos.store.data.model.InstallStatus
+import com.maxxos.store.data.model.Link
+import com.maxxos.store.util.CommonUtil.getETAString
+import com.maxxos.store.viewmodel.onboarding.MicroGUIState
 
 /**
  * Composable to display suggestion to install microG

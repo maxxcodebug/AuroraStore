@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.composable
+package com.maxxos.store.compose.ui.details.composable
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Arrangement
@@ -34,11 +34,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
-import com.aurora.store.compose.composable.app.TagListItem
-import com.aurora.store.compose.preview.AppPreviewProvider
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.util.CommonUtil
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.app.TagListItem
+import com.maxxos.store.compose.preview.AppPreviewProvider
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.util.CommonUtil
 
 /**
  * Composable to display tags related to the app, supposed to be used as a part

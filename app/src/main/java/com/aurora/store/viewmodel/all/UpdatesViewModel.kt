@@ -16,18 +16,18 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.all
+package com.maxxos.store.viewmodel.all
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.aurora.store.data.ExodusRepository
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.helper.UpdateHelper
-import com.aurora.store.data.model.ExodusTracker
-import com.aurora.store.data.model.StorageRequirement
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.util.StorageUtil
+import com.maxxos.store.data.ExodusRepository
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.helper.UpdateHelper
+import com.maxxos.store.data.model.ExodusTracker
+import com.maxxos.store.data.model.StorageRequirement
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.util.StorageUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

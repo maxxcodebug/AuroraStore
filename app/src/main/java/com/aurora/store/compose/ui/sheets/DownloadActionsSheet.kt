@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.sheets
+package com.maxxos.store.compose.ui.sheets
 
 import android.text.format.Formatter
 import androidx.compose.foundation.clickable
@@ -46,10 +46,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import com.aurora.store.R
-import com.aurora.store.compose.composable.app.AnimatedAppIcon
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.util.PackageUtil
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.app.AnimatedAppIcon
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.util.PackageUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

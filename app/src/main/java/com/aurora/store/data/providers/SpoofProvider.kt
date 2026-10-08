@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
-import com.aurora.store.R
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_VENDING_VERSION
+import com.maxxos.store.R
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_VENDING_VERSION
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Locale
 import java.util.Properties

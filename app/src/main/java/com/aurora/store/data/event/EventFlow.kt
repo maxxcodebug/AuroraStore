@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.event
+package com.maxxos.store.data.event
 
 import android.util.Log
 import com.aurora.extensions.TAG

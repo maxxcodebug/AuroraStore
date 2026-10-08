@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.apps
+package com.maxxos.store.compose.ui.apps
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -30,14 +30,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import com.aurora.gplayapi.data.models.Category
-import com.aurora.store.CategoryStash
-import com.aurora.store.R
-import com.aurora.store.compose.composable.CategoryItem
-import com.aurora.store.compose.composable.Placeholder
-import com.aurora.store.compose.composable.ShimmerCategoryRow
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.ViewState
-import com.aurora.store.viewmodel.category.CategoryViewModel
+import com.maxxos.store.CategoryStash
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.CategoryItem
+import com.maxxos.store.compose.composable.Placeholder
+import com.maxxos.store.compose.composable.ShimmerCategoryRow
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.ViewState
+import com.maxxos.store.viewmodel.category.CategoryViewModel
 
 @Composable
 internal fun CategoriesContent(

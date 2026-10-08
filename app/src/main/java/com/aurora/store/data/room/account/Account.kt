@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.account
+package com.maxxos.store.data.room.account
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.data.model.AccountType
+import com.maxxos.store.data.model.AccountType
 
 @Entity(tableName = "account")
 data class Account(

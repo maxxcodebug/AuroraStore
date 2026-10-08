@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.onboarding.navigation
+package com.maxxos.store.compose.ui.onboarding.navigation
 
 /**
  * Pages that can be shown during onboarding

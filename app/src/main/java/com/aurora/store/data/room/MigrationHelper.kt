@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room
+package com.maxxos.store.data.room
 
 import android.util.Log
 import androidx.room.migration.Migration

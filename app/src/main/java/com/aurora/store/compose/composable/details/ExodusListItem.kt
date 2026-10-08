@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable.details
+package com.maxxos.store.compose.composable.details
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -38,9 +38,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.compose.ui.unit.dp
 import com.aurora.extensions.browse
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.ExodusTracker
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.ExodusTracker
 
 /**
  * Composable to display details about a tracker reported by Exodus Privacy

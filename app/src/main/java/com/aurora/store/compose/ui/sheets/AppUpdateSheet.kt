@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.sheets
+package com.maxxos.store.compose.ui.sheets
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -67,14 +67,14 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.aurora.extensions.openInfo
 import com.aurora.extensions.toast
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.data.event.BusEvent
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.room.account.Account
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.viewmodel.sheets.AppUpdateViewModel
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.data.event.BusEvent
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.room.account.Account
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.viewmodel.sheets.AppUpdateViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

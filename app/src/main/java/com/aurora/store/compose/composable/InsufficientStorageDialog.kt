@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.composable
+package com.maxxos.store.compose.composable
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Arrangement
@@ -31,9 +31,9 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.StorageRequirement
+import com.maxxos.store.R
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.StorageRequirement
 
 @Composable
 fun InsufficientStorageDialog(

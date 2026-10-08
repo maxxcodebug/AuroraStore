@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.content.Context
 import android.content.pm.PackageInfo
@@ -29,9 +29,9 @@ import com.aurora.extensions.TAG
 import com.aurora.extensions.generateX509Certificate
 import com.aurora.extensions.getUpdateOwnerPackageNameCompat
 import com.aurora.extensions.isPAndAbove
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.model.Algorithm
-import com.aurora.store.util.PackageUtil.getPackageInfo
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.model.Algorithm
+import com.maxxos.store.util.PackageUtil.getPackageInfo
 import java.security.MessageDigest
 import java.security.cert.X509Certificate
 

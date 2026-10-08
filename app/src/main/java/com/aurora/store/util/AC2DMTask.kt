@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
-import com.aurora.store.data.network.HttpClient
+import com.maxxos.store.data.network.HttpClient
 import java.util.Locale
 import javax.inject.Inject
 import okhttp3.RequestBody.Companion.toRequestBody

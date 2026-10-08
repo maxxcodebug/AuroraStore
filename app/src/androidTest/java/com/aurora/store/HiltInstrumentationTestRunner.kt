@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store
+package com.maxxos.store
 
 import android.app.Application
 import android.content.Context

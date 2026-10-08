@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
 import android.content.SharedPreferences
 import com.aurora.extensions.isNAndAbove
-import com.aurora.store.util.Preferences
+import com.maxxos.store.util.Preferences
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import javax.inject.Inject
@@ -54,7 +54,7 @@ class BlacklistProvider @Inject constructor(
                     )
                     val refSharedPreferences = refMethod.invoke(
                         context,
-                        File("/product/etc/com.aurora.store/blacklist.xml"),
+                        File("/product/etc/com.maxxos.store/blacklist.xml"),
                         Context.MODE_PRIVATE
                     ) as SharedPreferences
 

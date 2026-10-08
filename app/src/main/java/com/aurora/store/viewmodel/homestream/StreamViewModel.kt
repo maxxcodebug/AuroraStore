@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.homestream
+package com.maxxos.store.viewmodel.homestream
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -27,8 +27,8 @@ import com.aurora.gplayapi.data.models.StreamBundle
 import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.helpers.contracts.StreamContract
 import com.aurora.gplayapi.helpers.web.WebStreamHelper
-import com.aurora.store.HomeStash
-import com.aurora.store.data.model.ViewState
+import com.maxxos.store.HomeStash
+import com.maxxos.store.data.model.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

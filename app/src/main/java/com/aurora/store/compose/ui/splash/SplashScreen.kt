@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.splash
+package com.maxxos.store.compose.ui.splash
 
 import android.accounts.Account
 import android.accounts.AccountManager
@@ -70,19 +70,19 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.Constants.PACKAGE_NAME_PLAY_STORE
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.compose.composition.LocalNetworkStatus
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.data.model.AuthState
-import com.aurora.store.data.model.NetworkStatus
-import com.aurora.store.data.work.ExodusTrackerWorker
-import com.aurora.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
-import com.aurora.store.util.CertUtil.GOOGLE_PLAY_AUTH_TOKEN_TYPE
-import com.aurora.store.util.CertUtil.GOOGLE_PLAY_CERT
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.viewmodel.auth.AuthViewModel
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.compose.composition.LocalNetworkStatus
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.data.model.AuthState
+import com.maxxos.store.data.model.NetworkStatus
+import com.maxxos.store.data.work.ExodusTrackerWorker
+import com.maxxos.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
+import com.maxxos.store.util.CertUtil.GOOGLE_PLAY_AUTH_TOKEN_TYPE
+import com.maxxos.store.util.CertUtil.GOOGLE_PLAY_CERT
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.viewmodel.auth.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

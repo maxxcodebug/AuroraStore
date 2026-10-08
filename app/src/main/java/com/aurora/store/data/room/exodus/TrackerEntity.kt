@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.exodus
+package com.maxxos.store.data.room.exodus
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

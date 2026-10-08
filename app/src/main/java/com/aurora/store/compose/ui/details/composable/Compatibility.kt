@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.details.composable
+package com.maxxos.store.compose.ui.details.composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,13 +27,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
-import com.aurora.store.R
-import com.aurora.store.compose.composable.Info
-import com.aurora.store.compose.composable.SectionHeader
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.theme.successColor
-import com.aurora.store.compose.theme.warningColor
-import com.aurora.store.data.model.Scores
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.Info
+import com.maxxos.store.compose.composable.SectionHeader
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.theme.successColor
+import com.maxxos.store.compose.theme.warningColor
+import com.maxxos.store.data.model.Scores
 
 /**
  * Composable to display app compatibility rating from Plexus, supposed to be used as a part

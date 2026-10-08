@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.preview
+package com.maxxos.store.compose.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.room.favourite.Favourite
-import com.aurora.store.data.room.favourite.Favourite.Mode
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.room.favourite.Favourite
+import com.maxxos.store.data.room.favourite.Favourite.Mode
 
 /**
  * Preview provider for composable working with [Favourite]

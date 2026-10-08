@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences.installation
+package com.maxxos.store.compose.ui.preferences.installation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -40,16 +40,16 @@ import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.aurora.store.R
-import com.aurora.store.compose.composable.InstallerListItem
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.commons.MicroGInstallerPrerequisiteDialog
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.installer.SessionInstaller
-import com.aurora.store.data.model.Installer
-import com.aurora.store.data.model.InstallerInfo
-import com.aurora.store.viewmodel.preferences.InstallerViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.InstallerListItem
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.commons.MicroGInstallerPrerequisiteDialog
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.installer.SessionInstaller
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.data.model.InstallerInfo
+import com.maxxos.store.viewmodel.preferences.InstallerViewModel
 
 @Composable
 fun InstallerScreen(viewModel: InstallerViewModel = hiltViewModel()) {

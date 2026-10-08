@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.model
+package com.maxxos.store.data.model
 
 sealed class ViewState {
     inline fun <reified T> ViewState.getDataAs(): T = (this as? Success<*>)?.data as T

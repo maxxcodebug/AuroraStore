@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences.installation
+package com.maxxos.store.compose.ui.preferences.installation
 
 import android.app.admin.DevicePolicyManager
 import androidx.compose.foundation.clickable
@@ -41,13 +41,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.core.content.getSystemService
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTO_DELETE
-import com.aurora.store.util.save
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTO_DELETE
+import com.maxxos.store.util.save
 
 @Composable
 fun InstallationPreferenceScreen(onNavigateTo: (Destination) -> Unit) {

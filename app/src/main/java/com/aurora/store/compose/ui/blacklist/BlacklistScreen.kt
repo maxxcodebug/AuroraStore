@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.blacklist
+package com.maxxos.store.compose.ui.blacklist
 
 import android.net.Uri
 import androidx.activity.ComponentActivity
@@ -70,18 +70,18 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.Constants
 import com.aurora.extensions.toast
-import com.aurora.store.R
-import com.aurora.store.compose.composable.BlackListItem
-import com.aurora.store.compose.composable.ContainedLoadingIndicator
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.composable.TextDividerComposable
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.blacklist.menu.BlacklistMenu
-import com.aurora.store.compose.ui.blacklist.menu.MenuItem
-import com.aurora.store.compose.ui.commons.SortFilterSheet
-import com.aurora.store.compose.ui.commons.SortFilterState
-import com.aurora.store.data.model.BlacklistAppItem
-import com.aurora.store.viewmodel.blacklist.BlacklistViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.BlackListItem
+import com.maxxos.store.compose.composable.ContainedLoadingIndicator
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.composable.TextDividerComposable
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.blacklist.menu.BlacklistMenu
+import com.maxxos.store.compose.ui.blacklist.menu.MenuItem
+import com.maxxos.store.compose.ui.commons.SortFilterSheet
+import com.maxxos.store.compose.ui.commons.SortFilterState
+import com.maxxos.store.data.model.BlacklistAppItem
+import com.maxxos.store.viewmodel.blacklist.BlacklistViewModel
 import java.util.Calendar
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.update
+package com.maxxos.store.data.room.update
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

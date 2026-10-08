@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.preferences
+package com.maxxos.store.viewmodel.preferences
 
 import android.content.Context
 import android.content.pm.PackageManager
@@ -28,12 +28,12 @@ import com.aurora.extensions.TAG
 import com.aurora.extensions.isMIUI
 import com.aurora.extensions.isMiuiOptimizationDisabled
 import com.aurora.extensions.observeAsStateFlow
-import com.aurora.store.R
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.model.Installer
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_INSTALLER_ID
-import com.aurora.store.util.save
+import com.maxxos.store.R
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.model.Installer
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_INSTALLER_ID
+import com.maxxos.store.util.save
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

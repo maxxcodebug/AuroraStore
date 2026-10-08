@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.search
+package com.maxxos.store.viewmodel.search
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -34,12 +34,12 @@ import com.aurora.gplayapi.data.models.StreamCluster
 import com.aurora.gplayapi.exceptions.GooglePlayException
 import com.aurora.gplayapi.helpers.contracts.SearchContract
 import com.aurora.gplayapi.helpers.web.WebSearchHelper
-import com.aurora.store.AuroraApp
-import com.aurora.store.data.PageResult
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.model.SearchFilter
-import com.aurora.store.data.paging.GenericPagingSource.Companion.manualPager
-import com.aurora.store.data.providers.AuthProvider
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.data.PageResult
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.model.SearchFilter
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.manualPager
+import com.maxxos.store.data.providers.AuthProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

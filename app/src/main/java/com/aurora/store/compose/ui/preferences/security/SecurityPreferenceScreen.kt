@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences.security
+package com.maxxos.store.compose.ui.preferences.security
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,14 +37,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import com.aurora.extensions.toast
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.util.AppLockAuthenticator
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_APP_LOCK_ENABLED
-import com.aurora.store.util.Preferences.PREFERENCE_CONFIRM_EXTERNAL_DEEPLINK
-import com.aurora.store.util.save
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.util.AppLockAuthenticator
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_APP_LOCK_ENABLED
+import com.maxxos.store.util.Preferences.PREFERENCE_CONFIRM_EXTERNAL_DEEPLINK
+import com.maxxos.store.util.save
 
 @Composable
 fun SecurityPreferenceScreen() {

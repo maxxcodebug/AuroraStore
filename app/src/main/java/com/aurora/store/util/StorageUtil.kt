@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.util
+package com.maxxos.store.util
 
 import android.content.Context
 import android.content.Intent
@@ -27,7 +27,7 @@ import androidx.core.content.getSystemService
 import com.aurora.extensions.TAG
 import com.aurora.extensions.isNMR1AndAbove
 import com.aurora.extensions.isOAndAbove
-import com.aurora.store.data.model.StorageRequirement
+import com.maxxos.store.data.model.StorageRequirement
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

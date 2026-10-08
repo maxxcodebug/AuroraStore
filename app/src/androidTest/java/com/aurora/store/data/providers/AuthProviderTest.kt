@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.aurora.gplayapi.data.models.AuthData

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.about
+package com.maxxos.store.compose.ui.about
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -53,13 +53,13 @@ import coil3.request.ImageRequest
 import com.aurora.extensions.browse
 import com.aurora.extensions.copyToClipBoard
 import com.aurora.extensions.viewExternal
-import com.aurora.store.BuildConfig.VERSION_CODE
-import com.aurora.store.BuildConfig.VERSION_NAME
-import com.aurora.store.R
-import com.aurora.store.compose.composable.LinkListItem
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.Link
+import com.maxxos.store.BuildConfig.VERSION_CODE
+import com.maxxos.store.BuildConfig.VERSION_NAME
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.LinkListItem
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.Link
 
 @Composable
 fun AboutScreen() {

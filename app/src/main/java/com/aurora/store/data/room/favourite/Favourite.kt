@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.favourite
+package com.maxxos.store.data.room.favourite
 
 import android.os.Parcelable
 import androidx.room.Entity

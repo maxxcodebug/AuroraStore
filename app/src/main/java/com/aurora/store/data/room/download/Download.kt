@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.room.download
+package com.maxxos.store.data.room.download
 
 import android.content.Context
 import android.os.Parcelable
@@ -26,10 +26,10 @@ import androidx.room.PrimaryKey
 import com.aurora.extensions.requiresGMS
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.data.models.PlayFile
-import com.aurora.store.data.model.DownloadStatus
-import com.aurora.store.data.room.suite.ExternalApk
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.util.PathUtil
+import com.maxxos.store.data.model.DownloadStatus
+import com.maxxos.store.data.room.suite.ExternalApk
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.util.PathUtil
 import java.util.Date
 import kotlinx.parcelize.Parcelize
 

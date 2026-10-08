@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.installer.base
+package com.maxxos.store.data.installer.base
 
-import com.aurora.store.data.room.download.Download
+import com.maxxos.store.data.room.download.Download
 
 interface IInstaller {
     fun install(download: Download)

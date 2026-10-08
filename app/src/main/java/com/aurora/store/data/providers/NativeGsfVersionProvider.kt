@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.providers
+package com.maxxos.store.data.providers
 
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.content.pm.PackageInfoCompat
-import com.aurora.store.util.PackageUtil.getPackageInfo
+import com.maxxos.store.util.PackageUtil.getPackageInfo
 
 class NativeGsfVersionProvider(context: Context, isExport: Boolean = false) {
 

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.accounts
+package com.maxxos.store.compose.ui.accounts
 
 import android.accounts.AccountManager
 import android.widget.Toast
@@ -71,21 +71,21 @@ import com.aurora.Constants.URL_DISCLAIMER
 import com.aurora.Constants.URL_LICENSE
 import com.aurora.Constants.URL_TOS
 import com.aurora.extensions.browse
-import com.aurora.store.BuildConfig
-import com.aurora.store.R
-import com.aurora.store.compose.composable.AccountListItem
-import com.aurora.store.compose.composable.SectionHeader
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.commons.LoadingDialog
-import com.aurora.store.compose.ui.sheets.AccountActionsSheet
-import com.aurora.store.data.room.account.Account
-import com.aurora.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.RestartUtil
-import com.aurora.store.viewmodel.accounts.AccountsViewModel
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.AccountListItem
+import com.maxxos.store.compose.composable.SectionHeader
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.commons.LoadingDialog
+import com.maxxos.store.compose.ui.sheets.AccountActionsSheet
+import com.maxxos.store.data.room.account.Account
+import com.maxxos.store.util.CertUtil.GOOGLE_ACCOUNT_TYPE
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.RestartUtil
+import com.maxxos.store.viewmodel.accounts.AccountsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

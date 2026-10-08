@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.main
+package com.maxxos.store.compose.ui.main
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -50,30 +50,30 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aurora.extensions.requiresObbDir
-import com.aurora.store.MainViewModel
-import com.aurora.store.R
-import com.aurora.store.compose.composable.InsufficientStorageDialog
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.composable.TrackerUpdateWarningDialog
-import com.aurora.store.compose.composition.LocalNetworkStatus
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.ui.apps.AppsGamesScreen
-import com.aurora.store.compose.ui.commons.MoreSheet
-import com.aurora.store.compose.ui.commons.NetworkScreen
-import com.aurora.store.compose.ui.sheets.AppUpdateSheet
-import com.aurora.store.compose.ui.updates.UpdatesScreen
-import com.aurora.store.data.model.ExodusTracker
-import com.aurora.store.data.model.NetworkStatus
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.data.model.StorageRequirement
-import com.aurora.store.data.providers.PermissionProvider.Companion.isGranted
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_WARN_TRACKERS
-import com.aurora.store.util.StorageUtil
-import com.aurora.store.viewmodel.all.UpdatesViewModel
-import com.aurora.store.viewmodel.notifications.NotificationsViewModel
+import com.maxxos.store.MainViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.InsufficientStorageDialog
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.composable.TrackerUpdateWarningDialog
+import com.maxxos.store.compose.composition.LocalNetworkStatus
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.ui.apps.AppsGamesScreen
+import com.maxxos.store.compose.ui.commons.MoreSheet
+import com.maxxos.store.compose.ui.commons.NetworkScreen
+import com.maxxos.store.compose.ui.sheets.AppUpdateSheet
+import com.maxxos.store.compose.ui.updates.UpdatesScreen
+import com.maxxos.store.data.model.ExodusTracker
+import com.maxxos.store.data.model.NetworkStatus
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.data.model.StorageRequirement
+import com.maxxos.store.data.providers.PermissionProvider.Companion.isGranted
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_WARN_TRACKERS
+import com.maxxos.store.util.StorageUtil
+import com.maxxos.store.viewmodel.all.UpdatesViewModel
+import com.maxxos.store.viewmodel.notifications.NotificationsViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

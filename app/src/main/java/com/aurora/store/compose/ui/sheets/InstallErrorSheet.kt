@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.sheets
+package com.maxxos.store.compose.ui.sheets
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -51,7 +51,7 @@ import coil3.request.crossfade
 import com.aurora.extensions.copyToClipBoard
 import com.aurora.extensions.toast
 import com.aurora.gplayapi.data.models.App
-import com.aurora.store.R
+import com.maxxos.store.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

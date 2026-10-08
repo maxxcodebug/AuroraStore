@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.onboarding
+package com.maxxos.store.viewmodel.onboarding
 
 import android.content.Context
 import android.util.Log
@@ -30,30 +30,30 @@ import com.aurora.Constants.PACKAGE_NAME_PLAY_STORE
 import com.aurora.extensions.TAG
 import com.aurora.extensions.areNotificationsEnabled
 import com.aurora.extensions.isIgnoringBatteryOptimizations
-import com.aurora.store.AuroraApp
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.event.InstallerEvent
-import com.aurora.store.data.helper.UpdateHelper
-import com.aurora.store.data.model.UpdateMode
-import com.aurora.store.data.providers.BlacklistProvider
-import com.aurora.store.data.work.CacheWorker
-import com.aurora.store.util.FlavouredUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_AUTO_DELETE
-import com.aurora.store.util.Preferences.PREFERENCE_DEFAULT_SELECTED_TAB
-import com.aurora.store.util.Preferences.PREFERENCE_DISPENSER_URLS
-import com.aurora.store.util.Preferences.PREFERENCE_FILTER_AURORA_ONLY
-import com.aurora.store.util.Preferences.PREFERENCE_FILTER_FDROID
-import com.aurora.store.util.Preferences.PREFERENCE_FOR_YOU
-import com.aurora.store.util.Preferences.PREFERENCE_INSTALLER_ID
-import com.aurora.store.util.Preferences.PREFERENCE_INTRO
-import com.aurora.store.util.Preferences.PREFERENCE_THEME_STYLE
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_AUTO
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
-import com.aurora.store.util.Preferences.PREFERENCE_VENDING_VERSION
-import com.aurora.store.util.save
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.event.InstallerEvent
+import com.maxxos.store.data.helper.UpdateHelper
+import com.maxxos.store.data.model.UpdateMode
+import com.maxxos.store.data.providers.BlacklistProvider
+import com.maxxos.store.data.work.CacheWorker
+import com.maxxos.store.util.FlavouredUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_AUTO_DELETE
+import com.maxxos.store.util.Preferences.PREFERENCE_DEFAULT_SELECTED_TAB
+import com.maxxos.store.util.Preferences.PREFERENCE_DISPENSER_URLS
+import com.maxxos.store.util.Preferences.PREFERENCE_FILTER_AURORA_ONLY
+import com.maxxos.store.util.Preferences.PREFERENCE_FILTER_FDROID
+import com.maxxos.store.util.Preferences.PREFERENCE_FOR_YOU
+import com.maxxos.store.util.Preferences.PREFERENCE_INSTALLER_ID
+import com.maxxos.store.util.Preferences.PREFERENCE_INTRO
+import com.maxxos.store.util.Preferences.PREFERENCE_THEME_STYLE
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_AUTO
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_CHECK_INTERVAL
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_EXTENDED
+import com.maxxos.store.util.Preferences.PREFERENCE_VENDING_VERSION
+import com.maxxos.store.util.save
 import com.jakewharton.processphoenix.ProcessPhoenix
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext

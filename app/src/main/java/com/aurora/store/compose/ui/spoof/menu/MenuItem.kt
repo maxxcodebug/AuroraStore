@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.spoof.menu
+package com.maxxos.store.compose.ui.spoof.menu
 
 enum class MenuItem {
     IMPORT,

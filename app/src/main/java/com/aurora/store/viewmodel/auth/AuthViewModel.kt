@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.auth
+package com.maxxos.store.viewmodel.auth
 
 import android.content.Context
 import android.util.Log
@@ -26,16 +26,16 @@ import com.aurora.Constants
 import com.aurora.extensions.TAG
 import com.aurora.gplayapi.data.models.AuthData
 import com.aurora.gplayapi.helpers.AuthHelper
-import com.aurora.store.AuroraApp
-import com.aurora.store.R
-import com.aurora.store.data.event.AuthEvent
-import com.aurora.store.data.model.AccountType
-import com.aurora.store.data.model.AuthState
-import com.aurora.store.data.providers.AccountProvider
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.util.AC2DMTask
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
+import com.maxxos.store.AuroraApp
+import com.maxxos.store.R
+import com.maxxos.store.data.event.AuthEvent
+import com.maxxos.store.data.model.AccountType
+import com.maxxos.store.data.model.AuthState
+import com.maxxos.store.data.providers.AccountProvider
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.util.AC2DMTask
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.net.ConnectException

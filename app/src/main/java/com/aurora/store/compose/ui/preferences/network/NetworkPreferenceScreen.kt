@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.preferences.network
+package com.maxxos.store.compose.ui.preferences.network
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -56,21 +56,21 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.aurora.store.R
-import com.aurora.store.compose.composable.TopAppBar
-import com.aurora.store.compose.navigation.Destination
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.compose.ui.commons.ForceRestartDialog
-import com.aurora.store.util.CommonUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_MICROG_AUTH
-import com.aurora.store.util.Preferences.PREFERENCE_PROXY_INFO
-import com.aurora.store.util.Preferences.PREFERENCE_PROXY_URL
-import com.aurora.store.util.Preferences.PREFERENCE_VENDING_VERSION
-import com.aurora.store.util.remove
-import com.aurora.store.util.save
-import com.aurora.store.viewmodel.preferences.ProxyURLViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.TopAppBar
+import com.maxxos.store.compose.navigation.Destination
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.compose.ui.commons.ForceRestartDialog
+import com.maxxos.store.util.CommonUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_MICROG_AUTH
+import com.maxxos.store.util.Preferences.PREFERENCE_PROXY_INFO
+import com.maxxos.store.util.Preferences.PREFERENCE_PROXY_URL
+import com.maxxos.store.util.Preferences.PREFERENCE_VENDING_VERSION
+import com.maxxos.store.util.remove
+import com.maxxos.store.util.save
+import com.maxxos.store.viewmodel.preferences.ProxyURLViewModel
 import com.jakewharton.processphoenix.ProcessPhoenix
 
 @Composable

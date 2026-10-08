@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.compose.ui.onboarding
+package com.maxxos.store.compose.ui.onboarding
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -38,14 +38,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewWrapper
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aurora.extensions.toast
-import com.aurora.store.R
-import com.aurora.store.compose.composable.MicroG
-import com.aurora.store.compose.composable.ScrollHint
-import com.aurora.store.compose.preview.ThemePreviewProvider
-import com.aurora.store.data.model.PermissionType
-import com.aurora.store.data.providers.PermissionProvider
-import com.aurora.store.viewmodel.onboarding.MicroGUIState
-import com.aurora.store.viewmodel.onboarding.MicroGViewModel
+import com.maxxos.store.R
+import com.maxxos.store.compose.composable.MicroG
+import com.maxxos.store.compose.composable.ScrollHint
+import com.maxxos.store.compose.preview.ThemePreviewProvider
+import com.maxxos.store.data.model.PermissionType
+import com.maxxos.store.data.providers.PermissionProvider
+import com.maxxos.store.viewmodel.onboarding.MicroGUIState
+import com.maxxos.store.viewmodel.onboarding.MicroGViewModel
 
 @Composable
 fun MicroGPage(

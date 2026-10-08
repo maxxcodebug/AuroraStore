@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.data.work
+package com.maxxos.store.data.work
 
 import android.app.NotificationManager
 import android.content.Context
@@ -33,28 +33,28 @@ import com.aurora.extensions.isHyperOS
 import com.aurora.extensions.isIgnoringBatteryOptimizations
 import com.aurora.gplayapi.data.models.App
 import com.aurora.gplayapi.helpers.AppDetailsHelper
-import com.aurora.store.BuildConfig
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.helper.UpdateHelper
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.model.BuildType
-import com.aurora.store.data.model.SelfUpdate
-import com.aurora.store.data.model.UpdateMode
-import com.aurora.store.data.network.HttpClient
-import com.aurora.store.data.providers.AccountProvider
-import com.aurora.store.data.providers.AuthProvider
-import com.aurora.store.data.providers.BlacklistProvider
-import com.aurora.store.data.providers.GoogleAccountTokenProvider
-import com.aurora.store.data.room.update.IgnoredUpdateDao
-import com.aurora.store.data.room.update.Update
-import com.aurora.store.data.room.update.UpdateDao
-import com.aurora.store.data.room.update.isIgnoredBy
-import com.aurora.store.util.CertUtil
-import com.aurora.store.util.NotificationUtil
-import com.aurora.store.util.PackageUtil
-import com.aurora.store.util.Preferences
-import com.aurora.store.util.Preferences.PREFERENCE_SELF_UPDATE_ENABLED
-import com.aurora.store.util.Preferences.PREFERENCE_UPDATES_AUTO
+import com.maxxos.store.BuildConfig
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.helper.UpdateHelper
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.model.BuildType
+import com.maxxos.store.data.model.SelfUpdate
+import com.maxxos.store.data.model.UpdateMode
+import com.maxxos.store.data.network.HttpClient
+import com.maxxos.store.data.providers.AccountProvider
+import com.maxxos.store.data.providers.AuthProvider
+import com.maxxos.store.data.providers.BlacklistProvider
+import com.maxxos.store.data.providers.GoogleAccountTokenProvider
+import com.maxxos.store.data.room.update.IgnoredUpdateDao
+import com.maxxos.store.data.room.update.Update
+import com.maxxos.store.data.room.update.UpdateDao
+import com.maxxos.store.data.room.update.isIgnoredBy
+import com.maxxos.store.util.CertUtil
+import com.maxxos.store.util.NotificationUtil
+import com.maxxos.store.util.PackageUtil
+import com.maxxos.store.util.Preferences
+import com.maxxos.store.util.Preferences.PREFERENCE_SELF_UPDATE_ENABLED
+import com.maxxos.store.util.Preferences.PREFERENCE_UPDATES_AUTO
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.util.Locale

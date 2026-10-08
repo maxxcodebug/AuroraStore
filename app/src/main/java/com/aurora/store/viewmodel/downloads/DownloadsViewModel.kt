@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package com.aurora.store.viewmodel.downloads
+package com.maxxos.store.viewmodel.downloads
 
 import android.content.Context
 import android.net.Uri
@@ -26,15 +26,15 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.aurora.extensions.TAG
-import com.aurora.store.compose.ui.commons.SortOrder
-import com.aurora.store.compose.ui.downloads.DownloadSort
-import com.aurora.store.compose.ui.downloads.loadDownloadSort
-import com.aurora.store.compose.ui.downloads.save
-import com.aurora.store.data.helper.DownloadHelper
-import com.aurora.store.data.installer.AppInstaller
-import com.aurora.store.data.paging.GenericPagingSource.Companion.pager
-import com.aurora.store.data.room.download.Download
-import com.aurora.store.data.work.ExportWorker
+import com.maxxos.store.compose.ui.commons.SortOrder
+import com.maxxos.store.compose.ui.downloads.DownloadSort
+import com.maxxos.store.compose.ui.downloads.loadDownloadSort
+import com.maxxos.store.compose.ui.downloads.save
+import com.maxxos.store.data.helper.DownloadHelper
+import com.maxxos.store.data.installer.AppInstaller
+import com.maxxos.store.data.paging.GenericPagingSource.Companion.pager
+import com.maxxos.store.data.room.download.Download
+import com.maxxos.store.data.work.ExportWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
