@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.window.core.layout.WindowSizeClass
-import com.aurora.store.R
+import com.maxxos.store.R
 
 /**
  * Whether the device width is compact or not

@@ -1,0 +1,7 @@
+<!-- Copyright (C) 2026 MaxxOS. All rights reserved. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#174B43" android:pathData="M18,28 L29,18 L54,41 L79,18 L90,28 L54,62 Z" />
+    <path android:fillColor="#63C7AE" android:pathData="M18,80 L29,90 L54,67 L79,90 L90,80 L54,46 Z" />
+    <path android:fillColor="#DDF8EF" android:pathData="M31,48 L54,27 L77,48 L68,56 L54,43 L40,56 Z" />
+</vector>

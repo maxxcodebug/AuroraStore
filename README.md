@@ -1,3 +1,9 @@
+# Maxx Store
+
+MaxxOS-branded app store based on Aurora Store.
+
+MaxxOS project: https://github.com/MaxxOS-AOSP
+
 # Aurora Store
 
 Aurora Store enables you to search and download apps from the official Google Play store. You can check app descriptions, screenshots, updates, reviews, and download the APK directly from Google Play to your device. 

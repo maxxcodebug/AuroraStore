@@ -5,7 +5,7 @@
 
 package com.aurora.extensions
 
-import com.aurora.store.data.model.DownloadInfo
+import com.maxxos.store.data.model.DownloadInfo
 import java.io.InputStream
 import java.io.OutputStream
 import kotlin.concurrent.fixedRateTimer

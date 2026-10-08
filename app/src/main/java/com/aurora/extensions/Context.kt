@@ -28,9 +28,9 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.getSystemService
 import androidx.core.net.toUri
 import com.aurora.Constants
-import com.aurora.store.ComposeActivity
-import com.aurora.store.R
-import com.aurora.store.compose.navigation.Screen
+import com.maxxos.store.ComposeActivity
+import com.maxxos.store.R
+import com.maxxos.store.compose.navigation.Screen
 
 private const val TAG = "Context"
 

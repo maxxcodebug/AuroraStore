@@ -6,7 +6,7 @@
 package com.aurora.extensions
 
 import android.content.pm.PackageManager
-import com.aurora.store.BuildConfig
+import com.maxxos.store.BuildConfig
 
 /**
  * Gets the name of package responsible for installing/updating given package
