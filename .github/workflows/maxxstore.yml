@@ -98,10 +98,34 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build Maxx Store
+        shell: bash
         run: |
+          set -o pipefail
+
           ./gradlew :app:assembleVanillaDebug \
             --stacktrace \
-            --no-daemon
+            --info \
+            --no-daemon \
+            2>&1 | tee build.log
+
+      - name: Print Kotlin compiler errors
+        if: failure()
+        shell: bash
+        run: |
+          echo "========================================"
+          echo "        MAXXOS KOTLIN ERRORS"
+          echo "========================================"
+
+          grep -E \
+            'e: file:|error:|Unresolved reference|Redeclaration|Cannot access|Type mismatch|Conflicting overloads' \
+            build.log || true
+
+          echo
+          echo "========================================"
+          echo "        LAST 250 BUILD LINES"
+          echo "========================================"
+
+          tail -n 250 build.log
 
       - name: Locate APK
         id: apk
