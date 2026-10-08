@@ -74,6 +74,9 @@ private data class MoreItem(
 fun MoreSheet(
     onDismiss: () -> Unit,
     onNavigateTo: (Destination) -> Unit = {},
+    onNavigateToAccounts: () -> Unit = {
+        onNavigateTo(Destination.Accounts)
+    },
     viewModel: MoreViewModel = hiltViewModel()
 ) {
     val mainItems = listOf(
