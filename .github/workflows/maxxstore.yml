@@ -80,8 +80,25 @@ jobs:
           "$SDKMANAGER" \
             --sdk_root="$ANDROID_HOME" \
             "platform-tools" \
-            "platforms;android-37" \
-            "build-tools;35.0.0"
+            "platforms;android-37.0" \
+            "build-tools;37.0.0"
+
+      - name: Create Android 37 compatibility link
+        shell: bash
+        run: |
+          set -e
+
+          if [ -d "$ANDROID_HOME/platforms/android-37.0" ]; then
+            rm -rf "$ANDROID_HOME/platforms/android-37"
+            ln -s "$ANDROID_HOME/platforms/android-37.0"               "$ANDROID_HOME/platforms/android-37"
+
+            echo "Created:"
+            ls -la "$ANDROID_HOME/platforms/android-37"
+          else
+            echo "::error::Android 37.0 platform was not installed."
+            ls -la "$ANDROID_HOME/platforms" || true
+            exit 1
+          fi
 
       - name: Verify Android SDK
         shell: bash
